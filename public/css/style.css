@@ -1,0 +1,41 @@
+:root{
+    --mint: rgb(69, 252, 197);
+    --pink: rgb(255, 154, 171);
+    --litepink: rgb(255, 218, 224);
+
+
+}
+
+body {
+    background-color: rgb(41, 41, 41);
+}
+
+.header {
+    background-color: black;
+    color: var(--mint);
+}
+
+a {
+    color: var(--pink)
+}
+
+a:hover {
+    color: var(--litepink)
+}
+
+.font {
+    font-family: 'Indie Flower', cursive;
+}
+
+.mint {
+    color: var(--mint)
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.white {
+    color: white;
+    font-size: 36px;
+}

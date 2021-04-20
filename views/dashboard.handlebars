@@ -1,0 +1,36 @@
+
+        {{!-- dashboard:  
+            -in route, redirect if not logged in
+            -show upcoming sessions
+            -show notes --}}
+
+
+<p class="text-center font white">my upcoming study sessions</p>
+<div class="container upcomingsessions my-5">
+    <div class="row justify-content-center">       
+        <div class="card col-md-3 m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{session-title}}</h5>
+                <h6 class="card-subtitle mb-2 pink">{{date}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
+                <p class="card-text">{{description}}"</p>
+                <a href="#" class="card-link">un-enroll</a>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<p class="text-center font white mt-5">my notes</p>
+<div class="container notes">
+    <div class="row justify-content-center">
+        <div class="card col-md-3 m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <h6 class="card-subtitle mb-2 pink">{{date}}</h6>
+                <p class="card-text">{{content}}</p>
+                <a href="#" class="card-link">Update</a>
+                <a href="#" class="card-link">Delete</a>
+            </div>
+        </div>     
+    </div>
+</div>

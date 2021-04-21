@@ -20,7 +20,7 @@
                 <h6 class="card-subtitle mb-2 pink">{{date time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
                 <p class="card-text">{{description}}"</p>
-                <a href="#" data-id="{{project.id}} class="card-link unenroll">un-enroll</a>
+                <a href="#" data-id="{{project.id}}" class="card-link unenroll">un-enroll</a>
             </div>
         </div>        
         {{/each}}
@@ -39,9 +39,17 @@ Update button would be PUT, delete button would DELETE--}}
                 <h5 class="card-title">{{title}}</h5>
                 <h6 class="card-subtitle mb-2 pink">{{date}}</h6>
                 <p class="card-text">{{content}}</p>
-                <a href="#" data-id="{{project.id}} class="card-link notedelete">Delete</a>
+                <a href="#" data-id="{{project.id}}" class="card-link notedelete">Delete</a>
             </div>
         </div> 
         {{/each}}    
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col text-center">
+            <button type="button" class="btn btn-outline-light justify-content-right">+ New Note</button>
+        </div>
     </div>
 </div>

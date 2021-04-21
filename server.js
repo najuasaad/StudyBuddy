@@ -12,6 +12,12 @@ const PORT = process.env.PORT || 3001;
 // Incorporate the custom helper methods
 const hbs = exphbs.create({ helpers });
 
+// Set up sessions
+const sess = {
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+};
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

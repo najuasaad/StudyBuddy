@@ -25,7 +25,6 @@ Sessions.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-
     max_occupancy: {
         type: DataTypes.INTEGER,
         allowNull: false,

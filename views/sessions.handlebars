@@ -1,0 +1,34 @@
+{{!-- 
+    /sessions
+    - could show a calendar with all upcoming sessions 
+    - if we can't display a calendar, we can card load all upcoming events
+    - we could still use the google calendar api and create a calendar that will track and save locations
+ --}}
+
+<p class="text-center font white">upcoming study sessions</p>
+<div class="container upcomingsessions my-5">
+    <div class="row justify-content-center">       
+        {{#each sessions as ||}}
+        <div class="card col-md-3 m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{session-title}}</h5>
+                <h6 class="card-subtitle mb-2 pink">{{date time}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
+                <p class="card-text">{{description}}"</p>
+                <p class="card-text font-italic mint">{{host}}"</p>
+                <h6 class="card-subtitle mb-2 text-muted">{{attendee display names, separated by comma is fine}}</h6>
+                <a href="#" class="card-link">enroll</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col text-center">
+            <button type="button" class="btn btn-outline-light justify-content-right">+ New Session</button>
+        </div>
+    </div>
+</div>
+

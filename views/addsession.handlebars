@@ -1,0 +1,43 @@
+{{!-- 
+this page should redirect to login page if not logged in 
+/sessions/new POST
+
+--}}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-md-6 m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">add a new session</h5>
+                <form>
+                <div class="form-group">
+                    <label for="inputSessionTitle">session title</label>
+                    <input type="text" class="form-control" id="inputSessionTitle">
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionDescription">description</label>
+                    <input type="text" class="form-control" id="inputSessionDescription">
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionOccupancy">max-occupancy</label>
+                    <input type="number" class="form-control" id="inputSessionOccupancy">
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionDate">date</label>
+                    <input type="date" class="form-control" id="inputSessionDate">
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionTime">time</label>
+                    <input type="time" class="form-control" id="inputSessionTime">
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionLocation">location</label>
+                    <input type="string" class="form-control" id="inputSessionLocation">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-dark" id="newSession">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

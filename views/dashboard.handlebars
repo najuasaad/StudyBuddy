@@ -2,27 +2,38 @@
         {{!-- dashboard:  
             -in route, redirect if not logged in
             -show upcoming sessions
-            -show notes --}}
+            -show notes 
+            -should only show study sessions belonging the loggin-in id's sessions
+            -should only show notes belonging to logged-in id's notes
+            buttons for un-enroll from each session, grab by session id
+            buttons for update/delete on each note, grab by note id           
+        --}}
 
 
 <p class="text-center font white">my upcoming study sessions</p>
 <div class="container upcomingsessions my-5">
     <div class="row justify-content-center">       
+        {{#each session as ||}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{session-title}}</h5>
-                <h6 class="card-subtitle mb-2 pink">{{date}}</h6>
+                <h6 class="card-subtitle mb-2 pink">{{date time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
                 <p class="card-text">{{description}}"</p>
                 <a href="#" class="card-link">un-enroll</a>
             </div>
         </div>        
+        {{/each}}
     </div>
 </div>
+
+{{!-- in js, could we change the title and content attributes 'readonly' to false so we could update from this page? 
+Update button would be PUT, delete button would DELETE--}}
 
 <p class="text-center font white mt-5">my notes</p>
 <div class="container notes">
     <div class="row justify-content-center">
+        {{#each notes as ||}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{title}}</h5>
@@ -31,6 +42,7 @@
                 <a href="#" class="card-link">Update</a>
                 <a href="#" class="card-link">Delete</a>
             </div>
-        </div>     
+        </div> 
+        {{/each}}    
     </div>
 </div>

@@ -15,7 +15,11 @@ Sessions.init(
     },
     host_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,  
+        allowNull: false,
+        references: {
+          model: 'members',
+          key: 'id'
+        }  
     },
     session_title: {
         type: DataTypes.STRING,
@@ -25,7 +29,6 @@ Sessions.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-
     max_occupancy: {
         type: DataTypes.INTEGER,
         allowNull: false,

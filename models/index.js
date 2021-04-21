@@ -1,21 +1,30 @@
 const Notes= require('./notes');
 const Members=require('./members');
 const Sessions= require('./sessions');
+const SessionMember = require('./sessionmember')
 
 
-Members.hasMany(Sessions,{
-    foreignKey: 'members_id', 
-    onDelete: "cascade"
+Members.belongsToMany(Sessions,{
+    through: {
+        model: 'session_member',
+        unique: false,
+        foreignKey: 'session_id'
+    }
 });
 
-Sessions.hasMany(Members,{
-    foreignKey: 'sessions_id', 
-    onDelete: "cascade"
+Sessions.belongsToMany(Members,{
+    through: {
+        model: 'session_member',
+        unique: false,
+        foreignKey: 'member_id'
+    }
 });
+
 Notes.belongsTo(Members,{
     foreignKey: 'members_id', 
     onDelete: "cascade"
 });
+
 Members.hasMany(Notes,{
     foreignKey: 'members_id', 
     onDelete: "cascade"
@@ -24,4 +33,4 @@ Members.hasMany(Notes,{
 
 //If any possible relations add here
 
-module.exports={Notes,Members,Sessions};
+module.exports={Notes,Members,Sessions,SessionMember};

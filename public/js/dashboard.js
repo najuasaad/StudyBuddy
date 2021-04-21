@@ -31,5 +31,10 @@ async function deleteNote(event) {
       }
 }
 
+async function goToNewNotePage(event) {
+  // redirect to add note route
+}
+
 document.querySelector('.unenroll').addEventListener('submit', unenrollSession);
 document.querySelector('.notedelete').addEventListener('delete', deleteNote);
+document.querySelector('#addNewSession').addEventListener('submit', goToNewNotePage)

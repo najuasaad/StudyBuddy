@@ -1,8 +1,8 @@
 async function newNote(event) {
     event.preventDefault();
 
-    notes_title = document.querySelector('#newNoteTitle').value.trim();
-    notes_content = document.querySelector('@newNotesContent').value.trim();
+    notes_title = document.querySelector('#inputNoteTitle').value.trim();
+    notes_content = document.querySelector('#inputNoteContent').value.trim();
 
     if (notes_title && notes_content) {
         const response = await fetch(`/api/notes`, {
@@ -24,4 +24,4 @@ async function newNote(event) {
     }
 }
 
-document.querySelector('#addNewNote').addEventListener('submit', enrollSession);
+document.querySelector('#addNewNote').addEventListener('submit', newNote);

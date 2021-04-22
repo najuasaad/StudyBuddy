@@ -36,6 +36,20 @@ Members.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+    type: DataTypes.STRING,
+    allowNull: faglse,
+    },
+
+    // picture: {
+    //     type: DataTypes.STRING,               //doubt
+    //     allowNull: false,
+    // },
+
     notes_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

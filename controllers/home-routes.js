@@ -2,7 +2,7 @@ const router = require('express').Router();
 // const sequelize = require('../config/connection');
 const { Members, Sessions, Notes, SessionMember } = require('../models');
 
-// Home Page Render
+// Home Page Render (sessions page)
 router.get('/', async (req, res) => {
   try {
     const sessionData = await Sessions.findAll({
@@ -28,6 +28,37 @@ router.get('/', async (req, res) => {
   }
 });
 
+// dash lists session user's notes and upcoming study sessions
+router.get('/dashboard', async (req, res) => {
+  try {
+    const user = req.session.member_id
+
+    // NOTES instead of findOne, findMany where member_id = req.session.member_id
+
+    const notesData = await Notes.findMany({ where: {user = member_id}});
+
+    // STUDY SESSIONS 
+    
+    const sessionData = await Members.findOne({ where: { id: req.session.member_id} }, 
+      {include: [{model: Session, through: SessionMember, as: sessions}]
+    })
+
+    const notes = notesData.map((note) =>
+      session.get({ plain: true })
+    );
+
+    // remember to change handlebars dash page to studysessions
+    const studysessions = sessionData.map((session) =>
+      session.get({ plain: true })
+    );
+
+    res.render('dashboard', notes, studysessions);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Login Page Render
 router.get('/login', async (req, res) => {
   try {
@@ -38,24 +69,10 @@ router.get('/login', async (req, res) => {
   }
 });
 
-// GET one painting
+// Sign up
 router.get('/signup', async (req, res) => {
   try {
     res.render('signup');
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/dashboard', async (req, res) => {
-  try {
-    const userData = await Members.findOne({ where: { username_id: req.session.user_id} }, 
-      {include: [ {model: Post, Comment} ]
-    })
-
-    res.render('dashboard',
-    );
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

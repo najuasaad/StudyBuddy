@@ -11,6 +11,10 @@ async function newFormUser(event) {
   const state = document.querySelector('#inputState').value;
   const profilePicture = document.querySelector('#inputProfilePicture').value;
 
+  if ( isValidEmail(email) !== true ) {
+    prompt('Must use a valid email')
+  }
+  
   if (email && password && display_name && title) {
     console.log("if statement passed")
     const response = await fetch(`/api/members`, {

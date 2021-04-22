@@ -3,7 +3,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Members extends Model {}
+class Members extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 Members.init(
   {
@@ -20,52 +24,34 @@ Members.init(
         validate: {
           isEmail: true,
       }
-    },
+    },  
     password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [6],
       }
-    },
+    },  
     display_name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
+    },  
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
+    }, 
     city: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }, 
     state: {
-    type: DataTypes.STRING,
-    allowNull: faglse,
+      type: DataTypes.STRING,
+      allowNull: faglse,
     },
-
     // picture: {
     //     type: DataTypes.STRING,               //doubt
     //     allowNull: false,
     // },
-
-    notes_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'notes',
-            key: 'id'
-        }
-    },
-    sessions_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'sessions',
-            key: 'id'
-        }
-    },
   },
 
   {

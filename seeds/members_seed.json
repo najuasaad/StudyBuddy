@@ -1,0 +1,42 @@
+[
+    {
+        "email": "najuasaad@gmail.com",
+        "password": "hello",
+        "display_name": "Spock",
+        "title": "Student",
+        "city": "Atlanta",
+        "state": "GA"
+    },
+    {
+        "email": "najuadontdie@gmail.com",
+        "password": "goodbye",
+        "display_name": "Henrietta",
+        "title": "Student",
+        "city": "St. Paul",
+        "state": "MN"
+    },
+    {
+        "email": "samanthanajua@hotmail.com",
+        "password": "nottodaysatan",
+        "display_name": "alan123",
+        "title": "Tutor",
+        "city": "New Hope",
+        "state": "MN"
+    },
+    {
+        "email": "girlsaliar@weezer.org",
+        "password": "why4what",
+        "display_name": "C00l1",
+        "title": "Student",
+        "city": "Savage",
+        "state": "MN"
+    },
+    {
+        "email": "najuasaad@gmail.com",
+        "password": "password",
+        "display_name": "Maya",
+        "title": "Junior Developer",
+        "city": "Brainerd",
+        "state": "MN"
+    }
+]

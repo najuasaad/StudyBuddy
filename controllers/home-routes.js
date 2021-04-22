@@ -1,23 +1,26 @@
 const router = require('express').Router();
 // const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Members, Sessions, Notes, SessionMember } = require('../models');
 
 // Home Page Render
 router.get('/', async (req, res) => {
   try {
-    const dbBlogData = await Post.findAll({
-      include: [ {model: User, Comment} ]
+    const sessionData = await Sessions.findAll({
+      include: [ {  model: Members, through: SessionMember, as: "members" } ]
     });
 
-    const posts = dbBlogData.map((post) =>
-      post.get({ plain: true })
+    const sessions = sessionData.map((session) =>
+      session.get({ plain: true })
     );
 
-    res.render('homepage', {
-      posts,
+    console.log(sessions)
+
+    res.render('sessions', {
+      sessions,
       logged_in: req.session.logged_in,
       logged_in_user: req.session.username
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -35,9 +38,9 @@ router.get('/login', async (req, res) => {
 });
 
 // GET one painting
-router.get('/sign_up', async (req, res) => {
+router.get('/signup', async (req, res) => {
   try {
-    res.render('sign_up');
+    res.render('signup');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

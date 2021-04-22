@@ -8,16 +8,20 @@
 <p class="text-center font white">upcoming study sessions</p>
 <div class="container upcomingsessions my-5">
     <div class="row justify-content-center">       
-        {{#each sessions as ||}}
+        {{#each sessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{session-title}}</h5>
-                <h6 class="card-subtitle mb-2 pink">{{date time}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
-                <p class="card-text">{{description}}"</p>
+                <h5 class="card-title">{{session.session-title}}</h5>
+                <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
+                <p class="card-text">{{session.description}}"</p>
                 <p class="card-text font-italic mint">{{host}}"</p>
-                <h6 class="card-subtitle mb-2 text-muted">{{attendee display names, separated by comma is fine}}</h6>
-                <a href="#" data-id="{{project.id}}" class="card-link enroll">enroll</a>
+                <div class="card-subtitle mb-2 text-muted">
+                    {{#each session.members as |member|}}
+                    <h6>{{member.display_name}}</h6>
+                    {{/each}}
+                </div>
+                <a href="#" data-id="{{session.id}}" class="card-link enroll">enroll</a>
             </div>
         </div>
         {{/each}}

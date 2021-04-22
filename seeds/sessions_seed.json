@@ -1,0 +1,47 @@
+[
+    {
+        "host_id": 1,
+        "session_title": "Bootstrap",
+        "description": "A review of the Bootstrap framework.",
+        "max_occupancy": 5,
+        "location": "3 Morrill Hall, 100 Church St SE, Minneapolis, MN 55455, United States",
+        "date": "2021-05-20",
+        "time": "13:30"
+    },
+    {
+        "host_id": 5,
+        "session_title": "Internal JS",
+        "description": "Working with javascript inside HTML",
+        "max_occupancy": 10,
+        "location": "3 Morrill Hall, 100 Church St SE, Minneapolis, MN 55455, United States",
+        "date": "2021-05-01",
+        "time": "15:45"
+    },
+    {
+        "host_id": 3,
+        "session_title": "Title No. 3",
+        "description": "Description number 3",
+        "max_occupancy": 3,
+        "location": "3 Morrill Hall, 100 Church St SE, Minneapolis, MN 55455, United States",
+        "date": "2021-04-30",
+        "time": "17:00"
+    },
+    {
+        "host_id": 2,
+        "session_title": "Title No. 4",
+        "description": "Description number 4",
+        "max_occupancy": 3,
+        "location": "3 Morrill Hall, 100 Church St SE, Minneapolis, MN 55455, United States",
+        "date": "2021-05-01",
+        "time": "6:30"
+    },
+    {
+        "host_id": 4,
+        "session_title": "Title No. 5",
+        "description": "Description number 5",
+        "max_occupancy": 3,
+        "location": "3 Morrill Hall, 100 Church St SE, Minneapolis, MN 55455, United States",
+        "date": "2021-05-05",
+        "time": "19:15"
+    }
+]

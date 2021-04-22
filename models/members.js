@@ -3,7 +3,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Members extends Model {}
+class Members extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 Members.init(
   {
@@ -35,22 +39,6 @@ Members.init(
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    notes_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'notes',
-            key: 'id'
-        }
-    },
-    sessions_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'sessions',
-            key: 'id'
-        }
     },
   },
 

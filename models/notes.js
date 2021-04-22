@@ -23,7 +23,11 @@ Notes.init(
     },   
     member_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'member',
+        key: 'id',
+        unique: false,
+    }, 
     },
   },
 

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Members, Notes, Sessions } = require('../../models');
 
-// GET All Notes
+// GET All Notes by user
+//!!!!
 router.get('/', async (req, res) => {
   try {
     const notesData = await Notes.findAll({include: Members, Sessions});

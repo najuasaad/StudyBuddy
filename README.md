@@ -19,7 +19,7 @@ Study Buddy is an app that allows a signed-in user to view their notes and upcom
 
 * Henry Kariuki
 
-* Kelsie L
+* Kelsie Lewis
 
 * Saranya Dayalan
 

@@ -8,8 +8,8 @@ router.post('/', async (req, res) => {
     const userData = await Members.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      req.session.member_id = userData.id;
+      req.session.member = userData.display_name;
       req.session.logged_in = true;
       
       res.status(200).json(userData);
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 //Login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await Members.findOne({ where: { username: req.body.username } });
+    const userData = await Members.findOne({ where: { email: req.body.email } });
 
     console.log(userData)
     if (!userData) {
@@ -42,8 +42,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.username = userData.username;
+      req.session.member_id = userData.id;
+      req.session.member = userData.display_name;
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });

@@ -10,9 +10,9 @@ const sessionMemberSeedData = require('./session_members.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await Notes.bulkCreate(notesSeedData);
-
   await Members.bulkCreate(membersSeedData);
+
+  await Notes.bulkCreate(notesSeedData);
 
   await Sessions.bulkCreate(sessionSeedData);
 

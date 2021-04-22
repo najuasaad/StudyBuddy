@@ -12,16 +12,16 @@ async function enrollSession(event) {
                 session_id,
             })
         }) 
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+          } else {
+            alert('Failed to add note.');
+        }
     } else {
         // redirect to login
     }
-    
-    if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to add note.');
-    }
-
+ 
 }
 
 async function goToNewSessionPage(event) {

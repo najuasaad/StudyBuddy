@@ -48,7 +48,7 @@ Members.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    picture: {
+    profilePicture: {
         type: DataTypes.BLOB,
         allowNull: false,
     },

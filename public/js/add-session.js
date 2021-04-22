@@ -7,8 +7,12 @@ async function newFormSession(event) {
   const date = document.querySelector('#inputSessionDate').value.trim();
   const time = document.querySelector('#inputSessionTime').value.trim();
   const location = document.querySelector('#inputSessionLocation').value.trim();
-  const host_id = req.session.user_id;
+  const host_id = req.session.logged_in_user; 
 
+  if ( !req.session.logged_in ) {
+    prompt('Log-in to add a session')
+  }
+  
   if (title && description && max_occupancy && date && time && location ) {
     const response = await fetch(`/api/sessions`, {
       method: 'POST',

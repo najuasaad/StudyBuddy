@@ -21,6 +21,8 @@ async function newNote(event) {
           } else {
             alert('Failed to add note.');
           }
+    } else {
+        prompt('Must add title & content')
     }
 }
 

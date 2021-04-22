@@ -50,8 +50,8 @@ Members.init(
       allowNull: true,
     },
     profilePicture: {
-        type: DataTypes.STRING,               //doubt
-        allowNull: true,
+        type: DataTypes.BLOB,
+        allowNull: false,
     },
   },
 

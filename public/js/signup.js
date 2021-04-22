@@ -1,15 +1,21 @@
+$(document).ready(()=>{
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+})
+
+
 async function newFormUser(event) {
   event.preventDefault();
 
-  console.log("signup button pushed")
-
-  const email = document.querySelector('#inputEmail1').value;
-  const password = document.querySelector('#inputPassword1').value;
-  const display_name = document.querySelector('#inputDisplayName1').value;
-  const title = document.querySelector('#inputTitle1').value;
-  const city = document.querySelector('#inputCity').value;
-  const state = document.querySelector('#inputState').value;
-  const profilePicture = document.querySelector('#inputProfilePicture').value;
+  const email = document.querySelector('#inputEmail1').value.trim();
+  const password = document.querySelector('#inputPassword1').value.trim();
+  const display_name = document.querySelector('#inputDisplayName1').value.trim();
+  const title = document.querySelector('#inputTitle1').value.trim();
+  const city = document.querySelector('#inputCity').value.trim();
+  const state = document.querySelector('#inputState').value.trim();
+  const profilePicture = document.querySelector('#inputProfilePicture').value.trim();
 
   if ( isValidEmail(email) !== true ) {
     prompt('Must use a valid email')

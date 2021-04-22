@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
     res.render('sessions', {
       sessions,
       logged_in: req.session.logged_in,
-      logged_in_member: req.session.username,
-      logged_in_id: req.session.id
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
     });
 
   } catch (err) {

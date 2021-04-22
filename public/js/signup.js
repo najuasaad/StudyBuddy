@@ -1,6 +1,8 @@
 async function newFormUser(event) {
   event.preventDefault();
 
+  console.log("signup button pushed")
+
   const email = document.querySelector('#inputEmail1').value;
   const password = document.querySelector('#inputPassword1').value;
   const display_name = document.querySelector('#inputDisplayName1').value;
@@ -10,7 +12,8 @@ async function newFormUser(event) {
   const profilePicture = document.querySelector('#inputProfilePicture').value;
 
   if (email && password && display_name && title) {
-    const response = await fetch(`/api/members/`, {
+    console.log("if statement passed")
+    const response = await fetch(`/api/members`, {
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -30,6 +33,7 @@ async function newFormUser(event) {
     } else {
       alert('Failed to add user');
     }
-}}
+  }
+}
 
-document.querySelector('#newUser').addEventListener('submit', newFormUser);
+document.querySelector('#newUser').addEventListener('click', newFormUser);

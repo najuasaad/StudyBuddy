@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
     res.render('sessions', {
       sessions,
       logged_in: req.session.logged_in,
-      logged_in_member: req.session.username,
-      logged_in_id: req.session.id
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
     });
 
   } catch (err) {
@@ -50,7 +50,7 @@ router.get('/signup', async (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username_id: req.session.user_id} }, 
+    const userData = await Members.findOne({ where: { username_id: req.session.user_id} }, 
       {include: [ {model: Post, Comment} ]
     })
 

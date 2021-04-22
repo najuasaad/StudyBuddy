@@ -2,6 +2,7 @@
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 class Members extends Model {
   checkPassword(loginPw) {
@@ -42,19 +43,29 @@ Members.init(
     }, 
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     }, 
     state: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     profilePicture: {
         type: DataTypes.STRING,               //doubt
-        allowNull: false,
+        allowNull: true,
     },
   },
 
   {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      },
+    }, 
     sequelize,
     timestamps: false,
     freezeTableName: true,

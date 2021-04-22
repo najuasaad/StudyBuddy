@@ -11,6 +11,9 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET All of a User's Sessions
+router.get('/')
+
 // GET a single session
 router.get('/:id', async (req, res) => {
   try {

@@ -24,6 +24,10 @@ Notes.init(
     member_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'members',
+        key: 'id'
+    }
     },
   },
 

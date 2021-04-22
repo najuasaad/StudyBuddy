@@ -26,8 +26,9 @@ Notes.init(
       allowNull: false,
       references: {
         model: 'members',
-        key: 'id'
-    }
+        key: 'id',
+        unique: false,
+      }, 
     },
   },
 

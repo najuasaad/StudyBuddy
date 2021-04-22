@@ -42,14 +42,14 @@ Members.init(
     }, 
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     }, 
     state: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     profilePicture: {
-        type: DataTypes.STRING,               //doubt
+        type: DataTypes.BLOB,
         allowNull: false,
     },
   },

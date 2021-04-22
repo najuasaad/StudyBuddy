@@ -35,7 +35,7 @@ router.get('/dashboard', async (req, res) => {
 
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
-    const notesData = await Notes.findMany({ where: {user = member_id}});
+    const notesData = await Notes.findMany({ where: {user : member_id}});
 
     // STUDY SESSIONS 
     

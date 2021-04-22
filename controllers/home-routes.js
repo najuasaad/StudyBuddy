@@ -40,7 +40,7 @@ router.get('/dashboard', async (req, res) => {
     // STUDY SESSIONS 
     
     const sessionData = await Members.findOne({ where: { id: req.session.member_id} }, 
-      {include: [{model: Session, through: SessionMember, as: sessions}]
+      {include: [{model: Sessions, through: SessionMember, as: sessions}]
     })
 
     const notes = notesData.map((note) =>

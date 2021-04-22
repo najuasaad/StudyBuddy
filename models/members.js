@@ -48,10 +48,10 @@ Members.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // picture: {
-    //     type: DataTypes.STRING,               //doubt
-    //     allowNull: false,
-    // },
+    profilePicture: {
+        type: DataTypes.STRING,               //doubt
+        allowNull: false,
+    },
   },
 
   {

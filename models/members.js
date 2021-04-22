@@ -46,7 +46,7 @@ Members.init(
     }, 
     state: {
       type: DataTypes.STRING,
-      allowNull: faglse,
+      allowNull: false,
     },
     // picture: {
     //     type: DataTypes.STRING,               //doubt

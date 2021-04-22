@@ -1,11 +1,12 @@
 async function newFormUser(event) {
   event.preventDefault();
 
-  const email = document.querySelector('#inputEmail1').value;
-  const password = document.querySelector('#inputPassword1').value;
-  const display_name = document.querySelector('#inputDisplayName1').value;
-  const title = document.querySelector('#inputTitle1').value;
-  const location = document.querySelector('#inputLocation1').value;
+  const email = document.querySelector('#inputEmail1').value.trim();
+  const password = document.querySelector('#inputPassword1').value.trim();
+  const display_name = document.querySelector('#inputDisplayName1').value.trim();
+  const title = document.querySelector('#inputTitle1').value.trim();
+  const location = document.querySelector('#inputLocation1').value.trim();
+  const picture = document.querySelector('#imageFile').value.trim();
 
   if (email && password && display_name && title) {
     const response = await fetch(`/api/members/`, {
@@ -15,7 +16,9 @@ async function newFormUser(event) {
         password,
         display_name,
         title,
-        location
+        // city,
+        // state,
+        picture
       }),
       headers: {
         'Content-Type': 'application/json',

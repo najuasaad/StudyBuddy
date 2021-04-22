@@ -3,7 +3,7 @@
     <div class="card col-md-6 m-1" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title text-center">sign-up</h5>
-        <form>
+        <form id="newUser">
           <div class="form-group">
             <label for="inputEmail1">email</label>
             <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
@@ -24,11 +24,17 @@
             <label for="inputLocation1">city, state</label>
             <input type="text" placeholder="ex. Paris, TX" class="form-control" id="inputLocation1">
           </div>
+          <!--Chose file to upload the picture/image -->
+          <div class="custom-file mb-3">
+            <input type="file" class="form-control1" id="imageFile" />
+          </div>
           <br>
-          <button type="submit" class="btn btn-dark" id="newUser">Submit</button>
+          <button type="submit" class="btn btn-dark">Submit</button> 
           <br><br><a class="text-right" href="#">I have an account</a>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<script src="/js/signup.js" />

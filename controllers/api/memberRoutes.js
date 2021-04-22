@@ -3,6 +3,7 @@ const { Members } = require('../../models');
 
 //Creates User
 router.post('/', async (req, res) => {
+  console.log(req.body)
   try {
     const userData = await Members.create(req.body);
 

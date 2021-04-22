@@ -42,16 +42,16 @@ Members.init(
     }, 
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     }, 
     state: {
       type: DataTypes.STRING,
-      allowNull: faglse,
+      allowNull: true,
     },
-    // picture: {
-    //     type: DataTypes.STRING,               //doubt
-    //     allowNull: false,
-    // },
+    picture: {
+        type: DataTypes.BLOB,
+        allowNull: false,
+    },
   },
 
   {

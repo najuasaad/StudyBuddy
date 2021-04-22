@@ -17,7 +17,10 @@ Notes.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
+    notes_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },   
     member_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

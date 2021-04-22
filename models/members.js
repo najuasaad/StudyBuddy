@@ -36,12 +36,6 @@ Members.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-
-    // picture: {
-    //     type: DataTypes.STRING,               //doubt
-    //     allowNull: false,
-    // },
-
     notes_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -58,7 +52,6 @@ Members.init(
             key: 'id'
         }
     },
-
   },
 
   {

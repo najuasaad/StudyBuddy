@@ -42,7 +42,7 @@ Members.init(
     },
     state: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: faglse,
     },
 
     // picture: {
@@ -66,7 +66,6 @@ Members.init(
             key: 'id'
         }
     },
-
   },
 
   {

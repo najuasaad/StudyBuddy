@@ -15,7 +15,7 @@ SessionMember.init(
         member_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'member',
+                model: 'members',
                 key: 'id',
                 unique: false,
             }, 

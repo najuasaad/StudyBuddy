@@ -1,35 +1,44 @@
 async function unenrollSession(event) {
-    event.preventDefault();
-    // using session user info to remove them from the course
-    const id = event.target.getAttribute('data-id');
-    
-    const response = await fetch(`api/sessionmembers/${id}`, {
-        method: 'DELETE',
-    })
 
-    if (response.ok) {
+  if (event.target.hasAttribute('data-id')) {
+    event.preventDefault();
+
+    const session_id = event.target.getAttribute('data-id');
+          
+    if (session_id) {
+      const response = await fetch(`/api/sessionmember/${session_id}`, {
+      method: 'DELETE',
+      }) 
+      
+      if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete session.');
+        alert('Failed to delete.');
       }
+    }
+  }
 }
 
 async function deleteNote(event) {
-    event.preventDefault();
-    console.log('click')
-    const id = event.target.getAttribute('data-id');
-    
-    const response = await fetch(`api/notes/${id}`, {
-        method: 'DELETE',
-    })
 
-    
-    if (response.ok) {
+  if (event.target.hasAttribute('data-id')) {
+    event.preventDefault();
+
+    const session_id = event.target.getAttribute('data-id');
+          
+    if (session_id) {
+      const response = await fetch(`/api/notes/${session_id}`, {
+        method: 'DELETE',
+      }) 
+      
+      if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete session.');
+        alert('Failed to delete.');
       }
+    }
+  }
 }
 
-document.querySelector('.unenroll').addEventListener('submit', unenrollSession);
-document.querySelector('.deletebtn').addEventListener('delete', deleteNote);
+document.querySelector('.upcomingsessions').addEventListener('click', unenrollSession);
+document.querySelector('.notes').addEventListener('click', deleteNote);

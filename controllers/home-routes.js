@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
       session.get({ plain: true })
     );
 
+    console.log(sessions)
+
     res.render('sessions', {
       sessions,
       logged_in: req.session.logged_in,
@@ -30,25 +32,28 @@ router.get('/', async (req, res) => {
 // dash lists session user's notes and upcoming study sessions
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const user = req.session.member_id
-
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
     const notesData = await Notes.findAll({ where: { member_id : req.session.member_id }});
 
+    const notes = notesData.map((note) =>
+    note.get({ plain: true })
+  );
+
     // STUDY SESSIONS 
     
-    const membersData = await Members.findOne({ where: { id: req.session.member_id } }, 
-      {include: [{model: Sessions, through: SessionMember, as: "sessions"}]
+    const memberData = await Members.findOne({ 
+      where: { id: req.session.member_id }, 
+      include: [ {model: Sessions, through: SessionMember, as: "sessions"}]
     })
 
-    const notes = notesData.map((note) =>
-      note.get({ plain: true })
-    );
+    const member = memberData.get({ plain: true })
+
+    console.log(member)
 
     res.render('dashboard', {
-      notes, 
-      membersData,
+      member,
+      notes,
       logged_in: req.session.logged_in,
       logged_in_member: req.session.member,
       logged_in_id: req.session.member_id

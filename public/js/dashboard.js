@@ -9,7 +9,7 @@ async function unenrollSession(event) {
     // using session user info to remove them from the course
     const id = event.target.getAttribute('data-id');
     
-    const response = await fetch(`api/sessionmember/${id}`, {
+    const response = await fetch(`api/sessionmembers/${id}`, {
         method: 'DELETE',
     })
 

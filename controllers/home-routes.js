@@ -38,7 +38,7 @@ router.get('/dashboard', async (req, res) => {
     const notesData = await Notes.findMany({ where: {user = member_id}});
 
     // STUDY SESSIONS 
-    
+    // this is called session data, but it is member session data based on the current user
     const sessionData = await Members.findOne({ where: { id: req.session.member_id} }, 
       {include: [{model: Session, through: SessionMember, as: sessions}]
     })

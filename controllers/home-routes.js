@@ -78,6 +78,17 @@ router.get('/signup', async (req, res) => {
   }
 });
 
+
+// Map route under construction .handlebars will be created soon by KL.
+router.get('/map', async (req, res) => {
+  try {
+    res.render('map');
+     } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/addnote', async (req, res) => {
   try {
     res.render('addnote');

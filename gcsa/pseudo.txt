@@ -1,0 +1,5 @@
+date
+occupancy/attendees
+session id
+location
+start and end time

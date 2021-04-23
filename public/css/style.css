@@ -39,3 +39,8 @@ a:hover {
     color: white;
     font-size: 36px;
 }
+
+.sessionimage {
+    max-width: 100%;
+    height: auto;
+}

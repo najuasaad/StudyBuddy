@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Members, Notes, Sessions } = require('../../models');
+const { Members, Notes, Sessions, SessionMember } = require('../../models');
+
 
 // GET All sessions
 router.get('/', async (req, res) => {

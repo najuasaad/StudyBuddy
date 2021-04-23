@@ -26,4 +26,4 @@ async function newNote(event) {
     }
 }
 
-document.querySelector('#addNewNote').addEventListener('submit', newNote);
+document.querySelector('#addNewNote').addEventListener('click', newNote);

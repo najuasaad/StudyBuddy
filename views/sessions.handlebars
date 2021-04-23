@@ -7,7 +7,7 @@
 
 <p class="text-center font white">upcoming study sessions</p>
 <div class="container upcomingsessions my-5">
-    <div class="row justify-content-center">       
+    <div id="sessionListener" class="row justify-content-center">       
         {{#each sessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
@@ -21,18 +21,20 @@
                     <h6>{{member.display_name}}</h6>
                     {{/each}}
                 </div>
-                <a href="#" data-id="{{session.id}}" class="card-link enroll">enroll</a>
+                <button data-id="{{session.id}}" class="card-link enroll">enroll</button>
             </div>
         </div>
         {{/each}}
     </div>
 </div>
-
+{{#if logged_in }}
 <div class="container mb-5">
     <div class="row">
         <div class="col text-center">
-            <button type="button" id="addNewSession" class="btn btn-outline-light justify-content-right">+ New Session</button>
+            <a href="/addsession" ><button type="button" id="addNewSession" class="btn btn-outline-light justify-content-right">+ New Session</button></a>
         </div>
     </div>
 </div>
+{{/if}}
 
+<script src="./js/sessions.js"></script>

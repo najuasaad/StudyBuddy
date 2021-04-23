@@ -22,4 +22,4 @@ async function enrollInSession(event) {
     }
 }
 
-document.querySelector('#enrollbtn').addEventListener('click', enrollInSession)
+document.querySelector('.enrollbtn').addEventListener('click', enrollInSession)

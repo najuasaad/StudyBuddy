@@ -28,5 +28,5 @@ async function goToNewSessionPage(event) {
     // redirect to add session route
 }
 
-document.querySelector('.enroll').addEventListener('submit', enrollSession);
+document.querySelector('.enrollbtn').addEventListener('submit', enrollSession);
 document.querySelector('#addNewSession').addEventListener('submit', goToNewSessionPage)

@@ -14,7 +14,14 @@ router.get('/', async (req, res) => {
 });
 
 // GET All of a User's Sessions
-router.get('/')
+router.get('/', async (req, res) => {
+  try {
+    const sessionData = await Sessions.findAll({ where: {member_id: req.body.member_id}},{include: Members});
+    res.status(200).json(sessionData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // GET a single session
 router.get('/:id', async (req, res) => {

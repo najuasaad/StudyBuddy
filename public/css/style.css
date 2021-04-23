@@ -44,3 +44,11 @@ a:hover {
     max-width: 100%;
     height: auto;
 }
+
+.logout {
+    background-color: black;
+}
+
+.logout:hover{
+    color: var(--litepink)
+}

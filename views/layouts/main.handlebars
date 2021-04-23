@@ -22,21 +22,21 @@
         <h1 class="display-4 text-center font">study buddy</h1>
       </div>
       <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="/">study-sessions</a>
+        <li class="nav-item mb-1">
+          <a class="nav-link mb-1" href="/">study-sessions</a>
         </li>
         {{!-- need to add for log-out as well --}}
         {{#if logged_in }}
-        <li class="nav-item">
-          <a class="nav-link active" href="/dashboard">dashboard</a>
+        <li class="nav-item mb-1">
+          <a class="nav-link active mb-1" href="/dashboard">dashboard</a>
         </li>
-        <li class="nav-item">
-          <button class="btn-link no-button" id="logout">log-out</button>
+        <li>
+          <button class="card-link pink btn-link border-dark logout border-0" id="logout">log-out</button>
         </li>
         {{else}}
         {{!-- need to add conditional view for log-in through session data --}}
-        <li class="nav-item">
-          <a class="nav-link" href="/login">log-in</a>
+        <li class="nav-item mb-1">
+          <a class="nav-link mb-1" href="/login">log-in</a>
         </li>
         {{/if}}
       </ul>

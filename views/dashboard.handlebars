@@ -16,7 +16,7 @@
         {{#each studysessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{session.session-title}}</h5>
+                <h5 class="card-title">{{session.session_title}}</h5>
                 <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
                 <p class="card-text">{{session.description}}"</p>
@@ -27,18 +27,15 @@
     </div>
 </div>
 
-{{!-- in js, could we change the title and content attributes 'readonly' to false so we could update from this page? 
-Update button would be PUT, delete button would DELETE--}}
-
 <p class="text-center font white mt-5">my notes</p>
 <div class="container notes">
     <div class="row justify-content-center">
-        {{#each notes as |notes|}}
+        {{#each notes as |note|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{note.title}}</h5>
-                <p class="card-text">{{notes.content}}</p>
-                <a href="#" data-id="{{project.id}}" class="card-link notedelete">Delete</a>
+                <h5 class="card-title">{{note.notes_title}}</h5>
+                <p class="card-text">{{note.notes_content}}</p>
+                <button data-id="{{note.id}}" class="card-link pink btn-link bg-white border-0 float-right">delete</button>
             </div>
         </div> 
         {{/each}}    

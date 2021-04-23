@@ -18,6 +18,7 @@ async function newNote(event) {
 
         if (response.ok) {
             document.location.replace('/dashboard');
+            console.log('test')
           } else {
             alert('Failed to add note.');
           }

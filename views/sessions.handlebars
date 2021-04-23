@@ -11,17 +11,18 @@
         {{#each sessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{session.session-title}}</h5>
+                <h5 class="card-title">{{session.session_title}}</h5>
+                <p class="card-text">{{session.description}}</p>
+                <p class="card-text font-italic mint">Host: {{host_id}}</p>
                 <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
-                <p class="card-text">{{session.description}}"</p>
-                <p class="card-text font-italic mint">{{host}}"</p>
                 <div class="card-subtitle mb-2 text-muted">
+                    <br><h6>Attendees:</h6>
                     {{#each session.members as |member|}}
                     <h6>{{member.display_name}}</h6>
                     {{/each}}
                 </div>
-                <button data-id="{{session.id}}" class="card-link enroll">enroll</button>
+                <button data-id="{{session.id}}" class="card-link border-0 pink bg-white float-right enroll">enroll</button>
             </div>
         </div>
         {{/each}}

@@ -27,12 +27,12 @@
         {{/each}}
     </div>
 </div>
-
+{{#if logged_in }}
 <div class="container mb-5">
     <div class="row">
         <div class="col text-center">
-            <button type="button" id="addNewSession" class="btn btn-outline-light justify-content-right">+ New Session</button>
+            <a href="/addsession" ><button type="button" id="addNewSession" class="btn btn-outline-light justify-content-right">+ New Session</button></a>
         </div>
     </div>
 </div>
-
+{{/if}}

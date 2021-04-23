@@ -78,4 +78,22 @@ router.get('/signup', async (req, res) => {
   }
 });
 
+router.get('/addnote', async (req, res) => {
+  try {
+    res.render('addnote');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/addsession', async (req, res) => {
+  try {
+    res.render('addsession');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

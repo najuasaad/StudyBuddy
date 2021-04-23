@@ -12,7 +12,7 @@
     {{!-- <!-- bootstrap --> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {{!-- <!-- stylesheet --> --}}
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Study Buddy</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
         {{!-- need to add for log-out as well --}}
         {{#if logged_in }}
         <li class="nav-item">
-          <a class="nav-link" href="#" id="logout">log-out</a>
+          <button class="btn-link no-button" id="logout">log-out</button>
         </li>
         {{else}}
         {{!-- need to add conditional view for log-in through session data --}}

@@ -13,8 +13,6 @@ router.get('/', async (req, res) => {
       session.get({ plain: true })
     );
 
-    console.log(sessions)
-
     res.render('sessions', {
       sessions,
       logged_in: req.session.logged_in,
@@ -35,24 +33,25 @@ router.get('/dashboard', async (req, res) => {
 
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
-    const notesData = await Notes.findMany({ where: {user : member_id}});
+    const notesData = await Notes.findAll({ where: { member_id : req.session.member_id }});
 
     // STUDY SESSIONS 
     
-    const sessionData = await Members.findOne({ where: { id: req.session.member_id} }, 
-      {include: [{model: Session, through: SessionMember, as: sessions}]
+    const membersData = await Members.findOne({ where: { id: req.session.member_id } }, 
+      {include: [{model: Sessions, through: SessionMember, as: "sessions"}]
     })
 
     const notes = notesData.map((note) =>
-      session.get({ plain: true })
+      note.get({ plain: true })
     );
 
-    // remember to change handlebars dash page to studysessions
-    const studysessions = sessionData.map((session) =>
-      session.get({ plain: true })
-    );
-
-    res.render('dashboard', notes, studysessions);
+    res.render('dashboard', {
+      notes, 
+      membersData,
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

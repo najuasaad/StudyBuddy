@@ -10,8 +10,10 @@
 
 //  <script type="text/javascript">
    // Client ID and API key from the Developer Console
-   var clientId = '';
-   var apiKey = '';
+   var clientId = '1048380372604-pp7ici0tece11k6nq2kjk87k9mq7lftv.apps.googleusercontent.com';
+   var apiKey = ''
+
+   
 
 
  // Authorization scopes required by the API; multiple scopes can be

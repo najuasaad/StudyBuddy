@@ -37,3 +37,8 @@ sequelize.sync({ force: false }).then(() => {
   app.use(require('./controllers/'));
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+var clientId = process.env.clientId
+   var apiKey = process.env.apiKey
+
+   console.log("commingnnnnnnnnnnn-------", clientId ,apiKey)

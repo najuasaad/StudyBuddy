@@ -49,3 +49,4 @@ async function newFormUser(event) {
 }
 
 document.querySelector('#newUser').addEventListener('click', newFormUser);
+

@@ -5,7 +5,8 @@
         "display_name": "Spock",
         "title": "Student",
         "city": "Atlanta",
-        "state": "GA"
+        "state": "GA",
+        "profilePicture": null
     },
     {
         "email": "najuadontdie@gmail.com",
@@ -13,7 +14,8 @@
         "display_name": "Henrietta",
         "title": "Student",
         "city": "St. Paul",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": null
     },
     {
         "email": "samanthanajua@hotmail.com",
@@ -21,7 +23,8 @@
         "display_name": "alan123",
         "title": "Tutor",
         "city": "New Hope",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": null
     },
     {
         "email": "girlsaliar@weezer.org",
@@ -29,7 +32,8 @@
         "display_name": "C00l1",
         "title": "Student",
         "city": "Savage",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": null
     },
     {
         "email": "najua@gmail.com",
@@ -37,6 +41,7 @@
         "display_name": "Maya",
         "title": "Junior Developer",
         "city": "Brainerd",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": null
     }
 ]

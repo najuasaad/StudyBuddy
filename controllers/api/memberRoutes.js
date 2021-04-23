@@ -1,12 +1,18 @@
 const router = require('express').Router();
 const { Members } = require('../../models');
-
+const upload = require('../../upload')
 //Creates User
-router.post('/', async (req, res) => {
-  console.log(req.body)
+router.post('/', upload.single('profilePicture'), async (req, res) => {
   try {
-    const userData = await Members.create(req.body);
-
+    const userData = await Members.create({
+      email: req.body.email,
+      password: req.body.password,
+      display_name: req.body.display_name,
+      title: req.body.title,
+      city: req.body.city,
+      state: req.body.state,
+      profilePicture: req.file
+    });
     req.session.save(() => {
       req.session.member_id = userData.id;
       req.session.member = userData.display_name;

@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const { Members, Notes, Sessions } = require('../../models');
 
-// GET All Notes by user
-//!!!!
+// NS-Working to populate "my notes" section on /dashboard-FRIDAY
 router.get('/', async (req, res) => {
   try {
-    const notesData = await Notes.findAll({include: Members, Sessions});
+    const notesData = await Notes.findAll({ where: {member_id: req.body.member_id}},{include: Members, Sessions});
     res.status(200).json(notesData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// GET a single note
+// GET a single note 
+// do we need this?
 router.get('/:id', async (req, res) => {
   try {
     const noteData = await Notes.findByPk(req.params.id, {
@@ -32,9 +32,10 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a note
+// NS- working to create new note- FRIDAY
 router.post('/', async (req, res) => {
   try {
-    const newNoteData = await Notes.create(req.body);
+    const newNoteData = await Notes.create({...req.body, member_id: req.session.member_id});
     res.status(200).json(newNoteData);
   } catch (err) {
     res.status(400).json(err);
@@ -46,7 +47,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const noteData = await Notes.destroy({
       where: {
-        id: req.params.id
+        id: project.id,
       }
     });
 

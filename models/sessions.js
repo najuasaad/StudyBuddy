@@ -58,6 +58,8 @@ Sessions.init(
 
 module.exports = Sessions;
 
+/*
 {
   members
 }
+*/

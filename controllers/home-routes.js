@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 // const sequelize = require('../config/connection');
 const { Members, Sessions, Notes, SessionMember } = require('../models');
 
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // dash lists session user's notes and upcoming study sessions
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const user = req.session.member_id
 
@@ -78,6 +79,14 @@ router.get('/signup', async (req, res) => {
   }
 });
 
+router.get('/addnote', withAuth, async (req, res) => {
+    try {
+    res.render('addnote');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // Map route under construction .handlebars will be created soon by KL.
 router.get('/map', async (req, res) => {
@@ -89,16 +98,7 @@ router.get('/map', async (req, res) => {
   }
 });
 
-router.get('/addnote', async (req, res) => {
-  try {
-    res.render('addnote');
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/addsession', async (req, res) => {
+router.get('/addsession', withAuth, async (req, res) => {
   try {
     res.render('addsession');
   } catch (err) {

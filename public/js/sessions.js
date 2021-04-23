@@ -16,7 +16,7 @@ async function enrollSession(event) {
         if (response.ok) {
             document.location.replace('/dashboard');
           } else {
-            alert('Failed to add note.');
+            alert('Failed to enroll.');
         }
     } else {
         // redirect to login

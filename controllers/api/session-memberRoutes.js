@@ -5,7 +5,6 @@ const { SessionMember } = require('../../models');
 
 // need to add enroll in a session and unenroll from a session through session members table
 router.post('/', withAuth, async (req, res) => {
-  console.log(req.body)
   try {
     const sessionMemberData = await SessionMember.create({
       session_id: req.body.session_id,
@@ -18,11 +17,11 @@ router.post('/', withAuth, async (req, res) => {
 })
   
   // delete session member
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
       const sessionMemberData = await SessionMember.destroy({
         where: {
-          id: req.params.id
+          id: req.params.id,
         }
       });
   

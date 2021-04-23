@@ -13,14 +13,14 @@
 <p class="text-center font white">my upcoming study sessions</p>
 <div class="container upcomingsessions my-5">
     <div class="row justify-content-center">       
-        {{#each studysessions as |session|}}
+        {{#each member.sessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{session.session_title}}</h5>
                 <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
                 <p class="card-text">{{session.description}}"</p>
-                <a href="#" data-id="{{project.id}}" class="card-link unenroll">un-enroll</a>
+                <button data-id="{{session.id}}" class="card-link pink btn-link bg-white border-0 float-right unenroll">un-enroll</button>
             </div>
         </div>        
         {{/each}}
@@ -49,3 +49,5 @@
         </div>
     </div>
 </div>
+
+<script src="./js/dashboard.js"></script>

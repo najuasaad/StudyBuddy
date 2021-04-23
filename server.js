@@ -13,8 +13,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Incorporate the custom helper methods
-// const hbs = exphbs.create({ helpers });
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ 
+  helpers: {
+    format_date: helpers.format_date,
+    format_time: helpers.format_time
+  }
+});
 
 // Set up sessions
 const sess = {
@@ -30,6 +34,8 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(routes);
+
+console.log('this is', {helpers})
 
 sequelize.sync({ force: false }).then(() => {
   app.use(express.urlencoded({ extended: true }));

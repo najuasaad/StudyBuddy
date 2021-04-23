@@ -25,11 +25,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/">study-sessions</a>
         </li>
+        {{!-- need to add for log-out as well --}}
+        {{#if logged_in }}
         <li class="nav-item">
           <a class="nav-link active" href="/dashboard">dashboard</a>
         </li>
-        {{!-- need to add for log-out as well --}}
-        {{#if logged_in }}
         <li class="nav-item">
           <button class="btn-link no-button" id="logout">log-out</button>
         </li>

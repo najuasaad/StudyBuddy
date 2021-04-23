@@ -2,7 +2,7 @@
 // Global Variables
 
 
-<!--Add buttons to initiate auth sequence and sign out-->
+ <!--Add buttons to initiate auth sequence and sign out-->
  <button id="authorize_button" style="display: none;">Authorize</button>
  <button id="signout_button" style="display: none;">Sign Out</button>
 

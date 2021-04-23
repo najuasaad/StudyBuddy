@@ -1,5 +1,5 @@
-date
+date  with start and end time
 occupancy/attendees
 session id
+session_title
 location
-start and end time

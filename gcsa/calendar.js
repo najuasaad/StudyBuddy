@@ -13,8 +13,7 @@
    var clientId = '1048380372604-pp7ici0tece11k6nq2kjk87k9mq7lftv.apps.googleusercontent.com';
    var apiKey = ''
 
-   
-// Array of API discovery doc URLs for APIs used by the quickstart
+   // Array of API discovery doc URLs for APIs used by the quickstart
     var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
 

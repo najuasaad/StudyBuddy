@@ -17,7 +17,7 @@ async function newFormUser(event) {
   const title = document.querySelector('#inputTitle1').value.trim();
   const city = document.querySelector('#inputCity').value.trim();
   const state = document.querySelector('#inputState').value.trim();
-  //const profilePicture = document.querySelector('#emoji').value;
+  const profilePicture = document.getElementsByName('profilePicture').value;
 
   // if ( isValidEmail(email) !== true ) {
   //   prompt('Must use a valid email')
@@ -34,7 +34,7 @@ async function newFormUser(event) {
         title,
         city,
         state,
-        //profilePicture
+        profilePicture
       }),
       headers: {
         'Content-Type': 'application/json',

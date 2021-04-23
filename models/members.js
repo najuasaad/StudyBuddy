@@ -50,7 +50,7 @@ Members.init(
       allowNull: true,
     },
     profilePicture: {
-      // change to proper datatype, i think it's a string
+      // path to profile picture
       type: DataTypes.STRING,
       allowNull: true,
     },

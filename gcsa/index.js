@@ -10,8 +10,10 @@
 
 //  <script type="text/javascript">
    // Client ID and API key from the Developer Console
-   var clientId = '<YOUR_CLIENT_ID>';
-   var apiKey = '';
+   var clientId = process.env.clientId
+   var apiKey = process.env.apiKey
+
+   console.log("commingnnnnnnnnnnn-------", clientId ,apiKey)
 
 
  // Authorization scopes required by the API; multiple scopes can be
@@ -19,8 +21,8 @@
    var SCOPES = "https://www.googleapis.com/auth/calendar";
    var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-   var authorizeButton = document.getElementById('authorize_button');
-   var signoutButton = document.getElementById('signout_button');
+   //var authorizeButton = document.getElementById('authorize_button');
+   //var signoutButton = document.getElementById('signout_button');
 
    
       /**

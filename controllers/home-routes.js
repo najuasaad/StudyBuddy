@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 // const sequelize = require('../config/connection');
 const { Members, Sessions, Notes, SessionMember } = require('../models');
 
@@ -29,30 +30,34 @@ router.get('/', async (req, res) => {
 });
 
 // dash lists session user's notes and upcoming study sessions
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const user = req.session.member_id
-
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
-    const notesData = await Notes.findMany({ where: {user : member_id}});
+    const notesData = await Notes.findAll({ where: { member_id : req.session.member_id }});
+
+    const notes = notesData.map((note) =>
+    note.get({ plain: true })
+  );
 
     // STUDY SESSIONS 
     
-    const sessionData = await Members.findOne({ where: { id: req.session.member_id} }, 
-      {include: [{model: Session, through: SessionMember, as: sessions}]
+    const memberData = await Members.findOne({ 
+      where: { id: req.session.member_id }, 
+      include: [ {model: Sessions, through: SessionMember, as: "sessions"}]
     })
 
-    const notes = notesData.map((note) =>
-      session.get({ plain: true })
-    );
+    const member = memberData.get({ plain: true })
 
-    // remember to change handlebars dash page to studysessions
-    const studysessions = sessionData.map((session) =>
-      session.get({ plain: true })
-    );
+    console.log(member)
 
-    res.render('dashboard', notes, studysessions);
+    res.render('dashboard', {
+      member,
+      notes,
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -78,5 +83,34 @@ router.get('/signup', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/addnote', withAuth, async (req, res) => {
+    try {
+    res.render('addnote');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Map route under construction .handlebars will be created soon by KL.
+router.get('/map', async (req, res) => {
+  try {
+    res.render('map');
+     } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/addsession', withAuth, async (req, res) => {
+  try {
+    res.render('addsession');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;

@@ -1,32 +1,32 @@
 async function enrollSession(event) {
-    event.preventDefault();
-    // using session user info to add them to the attendee id list if the list is not full
-    const member_id = req.session.user_id
-    const session_id = event.target.getAttribute('data-id');
-    
-    if (member_id && session_id) {
-        const response = await fetch(`/`, {
-            method: 'POST',
-            body: JSON.stringify({
-                member_id,
-                session_id,
-            })
-        }) 
 
-        if (response.ok) {
-            document.location.replace('/dashboard');
-          } else {
-            alert('Failed to add note.');
+    console.log("element selected")
+
+    if (event.target.hasAttribute('data-id')) {
+        event.preventDefault();
+        console.log("button and user passed")
+
+        const session_id = event.target.getAttribute('data-id');
+            
+        if (session_id) {
+            const response = await fetch(`/api/sessionmembers/`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    session_id,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }) 
+        
+            if (response.ok) {
+                document.location.replace('/');
+            } else {
+                alert('Failed to enroll.');
+            }
         }
-    } else {
-        // redirect to login
     }
- 
 }
 
-async function goToNewSessionPage(event) {
-    // redirect to add session route
-}
 
-document.querySelector('.enroll').addEventListener('submit', enrollSession);
-document.querySelector('#addNewSession').addEventListener('submit', goToNewSessionPage)
+document.querySelector('#sessionListener').addEventListener('click', enrollSession);

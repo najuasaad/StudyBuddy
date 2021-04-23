@@ -1,0 +1,34 @@
+<p class="text-center font white">{{session.session_title}}</p>
+    <div class="container upcomingsessions my-5">
+        <div class="row justify-content-center">       
+            <div class="card col-md-6 m-1" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">{{session.description}}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
+                    <h6 class="card-subtitle mb-2 pink">{{session.date}}, {{session.time}}</h6>
+                    {{!-- make sure we're passing in host member object with picture and displayname and not just host id 
+                            not sure how this object is going to come in, so update the following two lines when you figure it out--}}
+                    <p class="card-text font-italic mint text-center">Host: {{session.host_displayname}}</p>
+                    <p class="card-text font-italic mint"><img class="p-3 sessionimage rounded-circle" src="{{session.host_profilePicture}}"></p>
+                    <p class="card-text font-italic mint text-center">Attendees:</p>
+                        {{!-- container for displaying attendees --}}
+                    <div class="container">
+                        <div class="row">
+
+                            {{!-- pass in session member info --}}
+                            {{#each sessionmember as |attendee|}}
+                            <div class="col-4 mb-3">
+                                <img class="sessionimage rounded-lg" src="{{attendee.profilePicture}}">
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                    <br><button href="#" id="enrollbtn" class="card-link pink btn-link bg-white border-0">enroll</button>
+                </div>      
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- card-link pink btn-link border-dark --}}

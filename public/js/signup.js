@@ -1,13 +1,15 @@
-$(document).ready(()=>{
-  $(".custom-file-input").on("change", function() {
-    var fileName = $(this).val().split("\\").pop();
-    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-  });
-})
+// $(document).ready(()=>{
+//   $(".custom-file-input").on("change", function() {
+//     var fileName = $(this).val().split("\\").pop();
+//     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+//   });
+// })
 
 
 async function newFormUser(event) {
   event.preventDefault();
+
+  console.log("button clicked")
 
   const email = document.querySelector('#inputEmail1').value.trim();
   const password = document.querySelector('#inputPassword1').value.trim();
@@ -15,11 +17,11 @@ async function newFormUser(event) {
   const title = document.querySelector('#inputTitle1').value.trim();
   const city = document.querySelector('#inputCity').value.trim();
   const state = document.querySelector('#inputState').value.trim();
-  const profilePicture = document.querySelector('#inputProfilePicture').value.trim();
+  //const profilePicture = document.querySelector('#emoji').value;
 
-  if ( isValidEmail(email) !== true ) {
-    prompt('Must use a valid email')
-  }
+  // if ( isValidEmail(email) !== true ) {
+  //   prompt('Must use a valid email')
+  // }
   
   if (email && password && display_name && title) {
     console.log("if statement passed")
@@ -32,7 +34,7 @@ async function newFormUser(event) {
         title,
         city,
         state,
-        profilePicture
+        //profilePicture
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -47,3 +49,4 @@ async function newFormUser(event) {
 }
 
 document.querySelector('#newUser').addEventListener('click', newFormUser);
+

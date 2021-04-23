@@ -1,48 +1,44 @@
-const redirect = () => {
-  if ( !req.session.logged_in ) {
-    //redirect
+async function unenrollSession(event) {
+
+  if (event.target.hasAttribute('data-id')) {
+    event.preventDefault();
+
+    const session_id = event.target.getAttribute('data-id');
+          
+    if (session_id) {
+      const response = await fetch(`/api/sessionmember/${session_id}`, {
+      method: 'DELETE',
+      }) 
+      
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete.');
+      }
+    }
   }
 }
 
-async function unenrollSession(event) {
-    event.preventDefault();
-    // using session user info to remove them from the course
-    const id = event.target.getAttribute('data-id');
-    
-    const response = await fetch(`api/sessionmember/${id}`, {
-        method: 'DELETE',
-    })
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to delete session.');
-      }
-}
-
 async function deleteNote(event) {
+
+  if (event.target.hasAttribute('data-id')) {
     event.preventDefault();
 
-    const id = event.target.getAttribute('data-id');
-    
-    const response = await fetch(`api/notes/${id}`, {
+    const session_id = event.target.getAttribute('data-id');
+          
+    if (session_id) {
+      const response = await fetch(`/api/notes/${session_id}`, {
         method: 'DELETE',
-    })
-
-    
-    if (response.ok) {
+      }) 
+      
+      if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete session.');
+        alert('Failed to delete.');
       }
+    }
+  }
 }
 
-async function goToNewNotePage(event) {
-  // redirect to add note route
-}
-
-redirect();
-
-document.querySelector('.unenroll').addEventListener('submit', unenrollSession);
-document.querySelector('.notedelete').addEventListener('delete', deleteNote);
-document.querySelector('#addNewSession').addEventListener('submit', goToNewNotePage)
+document.querySelector('.upcomingsessions').addEventListener('click', unenrollSession);
+document.querySelector('.notes').addEventListener('click', deleteNote);

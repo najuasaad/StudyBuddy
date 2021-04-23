@@ -14,6 +14,7 @@ SessionMember.init(
         },
         member_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'members',
                 key: 'id',
@@ -22,8 +23,9 @@ SessionMember.init(
         },
         session_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
-                model: 'session',
+                model: 'sessions',
                 key: 'id',
                 unique: false,
             }, 

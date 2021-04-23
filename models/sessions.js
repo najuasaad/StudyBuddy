@@ -21,6 +21,10 @@ Sessions.init(
         key: 'id'
       }  
     },
+    host_displayname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     session_title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -58,6 +62,3 @@ Sessions.init(
 
 module.exports = Sessions;
 
-{
-  members
-}

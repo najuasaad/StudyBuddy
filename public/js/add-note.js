@@ -18,6 +18,7 @@ async function newNote(event) {
 
         if (response.ok) {
             document.location.replace('/dashboard');
+            console.log('test')
           } else {
             alert('Failed to add note.');
           }
@@ -26,4 +27,4 @@ async function newNote(event) {
     }
 }
 
-document.querySelector('#addNewNote').addEventListener('submit', newNote);
+document.querySelector('#addNewNote').addEventListener('click', newNote);

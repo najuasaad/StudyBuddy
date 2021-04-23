@@ -12,7 +12,7 @@
     {{!-- <!-- bootstrap --> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {{!-- <!-- stylesheet --> --}}
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Study Buddy</title>
 </head>
 <body>
@@ -22,21 +22,21 @@
         <h1 class="display-4 text-center font">study buddy</h1>
       </div>
       <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="/">study-sessions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/dashboard">dashboard</a>
+        <li class="nav-item mb-1">
+          <a class="nav-link mb-1" href="/">study-sessions</a>
         </li>
         {{!-- need to add for log-out as well --}}
         {{#if logged_in }}
+        <li class="nav-item mb-1">
+          <a class="nav-link active mb-1" href="/dashboard">dashboard</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="logout">log-out</a>
+          <button class="btn-link card-link pink border-0 logout" id="logout">log-out</button>
         </li>
         {{else}}
         {{!-- need to add conditional view for log-in through session data --}}
-        <li class="nav-item">
-          <a class="nav-link" href="/login">log-in</a>
+        <li class="nav-item mb-1">
+          <a class="nav-link mb-1" href="/login">log-in</a>
         </li>
         {{/if}}
       </ul>

@@ -8,6 +8,7 @@ async function newFormSession(event) {
   const time = document.querySelector('#inputSessionTime').value.trim();
   const location = document.querySelector('#inputSessionLocation').value.trim();
   const host_id = req.session.logged_in_user; 
+  const host_displayname = req.session.logged_in_member;
 
   if ( !req.session.logged_in ) {
     prompt('Log-in to add a session')
@@ -23,7 +24,8 @@ async function newFormSession(event) {
         date,
         time,
         location,
-        host_id
+        host_id,
+        host_displayname
       }),
       headers: {
         'Content-Type': 'application/json',

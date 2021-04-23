@@ -13,14 +13,14 @@ Notes.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    notes_content: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     notes_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },   
+    notes_content: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     member_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

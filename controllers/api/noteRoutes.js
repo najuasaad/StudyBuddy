@@ -34,7 +34,9 @@ router.get('/:id', async (req, res) => {
 // CREATE a note
 router.post('/', async (req, res) => {
   try {
-    const newNoteData = await Notes.create(req.body);
+    const newNoteData = await Notes.create({
+      ...req.body,
+    member_id: req.session.member_id});
     res.status(200).json(newNoteData);
   } catch (err) {
     res.status(400).json(err);

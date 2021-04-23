@@ -2,13 +2,13 @@
 // Global Variables
 
 
- <!--Add buttons to initiate auth sequence and sign out-->
- <button id="authorize_button" style="display: none;">Authorize</button>
- <button id="signout_button" style="display: none;">Sign Out</button>
+//  <!--Add buttons to initiate auth sequence and sign out-->
+//  <button id="authorize_button" style="display: none;">Authorize</button>
+//  <button id="signout_button" style="display: none;">Sign Out</button>
 
- <pre id="content" style="white-space: pre-wrap;"></pre>
+//  <pre id="content" style="white-space: pre-wrap;"></pre>
 
- <script type="text/javascript">
+//  <script type="text/javascript">
    // Client ID and API key from the Developer Console
    var clientId = '<YOUR_CLIENT_ID>';
    var apiKey = '';

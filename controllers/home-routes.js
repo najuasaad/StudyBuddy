@@ -80,9 +80,19 @@ router.get('/signup', async (req, res) => {
 });
 
 router.get('/addnote', withAuth, async (req, res) => {
-  try {
+    try {
     res.render('addnote');
   } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Map route under construction .handlebars will be created soon by KL.
+router.get('/map', async (req, res) => {
+  try {
+    res.render('map');
+     } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }

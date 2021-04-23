@@ -10,7 +10,7 @@
 
 //  <script type="text/javascript">
    // Client ID and API key from the Developer Console
-   var clientId = '<YOUR_CLIENT_ID>';
+   var clientId = '';
    var apiKey = '';
 
 
@@ -96,3 +96,4 @@
           }
         });
       }
+      

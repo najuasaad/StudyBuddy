@@ -19,7 +19,7 @@
                 <div class="card-subtitle mb-2 mint text-center font-italic">
                     <h6>Attendees:</h6>
                     {{#each session.members as |member|}}
-                    <h6>{{member.display_name}} {{{get_emoji}}} </h6>
+                    <h6>{{member.display_name}}</h6>
                     {{/each}}
                 </div>
                 <button data-id="{{session.id}}" class="card-link border-0 pink bg-white float-right enroll">enroll</button>

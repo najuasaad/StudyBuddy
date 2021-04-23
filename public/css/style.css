@@ -49,3 +49,7 @@ a:hover {
     background-color: black;
 }
 
+img {
+    max-height: 200px;
+    max-width: auto;
+}

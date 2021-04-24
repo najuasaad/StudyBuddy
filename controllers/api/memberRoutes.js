@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
       req.session.member = userData.display_name;
       req.session.logged_in = true;
       req.session.email = userData.email;
+      req.session.profilePicture = userData.profilePicture
       
       res.status(200).json(userData);
     });

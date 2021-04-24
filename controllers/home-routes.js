@@ -88,7 +88,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
 // Login Page Render
 router.get('/login', async (req, res) => {
   try {
-    res.render('login');
+    res.render('login', {
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -98,7 +102,11 @@ router.get('/login', async (req, res) => {
 // Sign up
 router.get('/signup', async (req, res) => {
   try {
-    res.render('signup');
+    res.render('signup', {
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -107,7 +115,11 @@ router.get('/signup', async (req, res) => {
 
 router.get('/addnote', withAuth, async (req, res) => {
     try {
-    res.render('addnote');
+    res.render('addnote', {
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -117,8 +129,12 @@ router.get('/addnote', withAuth, async (req, res) => {
 // Map route under construction .handlebars will be created soon by KL.
 router.get('/map', async (req, res) => {
   try {
-    res.render('map');
-     } catch (err) {
+    res.render('map', {
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    }); 
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
@@ -126,7 +142,11 @@ router.get('/map', async (req, res) => {
 
 router.get('/addsession', withAuth, async (req, res) => {
   try {
-    res.render('addsession');
+    res.render('addsession', {
+    logged_in: req.session.logged_in,
+    logged_in_member: req.session.member,
+    logged_in_id: req.session.member_id
+  });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

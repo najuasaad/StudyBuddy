@@ -8,8 +8,6 @@ async function newFormSession(event) {
   const date = document.querySelector('#inputSessionDate').value.trim();
   const time = document.querySelector('#inputSessionTime').value.trim();
   const location = document.querySelector('#inputSessionLocation').value.trim();
-  // const host_id = req.session.logged_in_user; 
-  // const host_displayname = req.session.logged_in_member;
   
   if (session_title && description && max_occupancy && date && time && location ) {
     console.log("if statement passed")
@@ -22,8 +20,7 @@ async function newFormSession(event) {
         date,
         time,
         location,
-        // host_id,
-        // host_displayname,
+
       }),
       headers: {
         'Content-Type': 'application/json',

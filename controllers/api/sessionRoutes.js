@@ -49,7 +49,8 @@ router.post('/', async (req, res) => {
     const newSessionData = await Sessions.create({
       ...req.body, 
       host_id: req.session.member_id, 
-      host_displayname: req.session.member
+      host_displayname: req.session.member,
+      host_picture: req.session.profilePicture
     });
     res.status(200).json(newSessionData);
   } catch (err) {

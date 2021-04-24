@@ -52,11 +52,15 @@ a:hover {
 }
 
 img {
-    max-height: 200px;
+    max-height: 200px; /*Please make this a class and call on images that need it (line 23 of session.handlebars). Putting the global img rule is interfering with rendering google map*/
     max-width: auto;
 }
 
 .attendee {
     max-height: 50px;
     max-width: auto;
+}
+
+.hide {
+   display: none;
 }

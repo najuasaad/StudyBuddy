@@ -2,6 +2,7 @@
     {
         "host_id": 1,
         "host_displayname": "Spock",
+        "host_picture": "./images/cat.jpg",
         "session_title": "Bootstrap",
         "description": "A review of the Bootstrap framework.",
         "max_occupancy": 5,
@@ -12,6 +13,7 @@
     {
         "host_id": 5,
         "host_displayname": "Maya",
+        "host_picture": "./images/jellyfish.jpg",
         "session_title": "Internal JS",
         "description": "Working with javascript inside HTML",
         "max_occupancy": 10,
@@ -22,6 +24,7 @@
     {
         "host_id": 3,
         "host_displayname": "alan123",
+        "host_picture": "./images/fruitsalad.jpg",
         "session_title": "Title No. 3",
         "description": "Description number 3",
         "max_occupancy": 3,
@@ -32,6 +35,7 @@
     {
         "host_id": 2,
         "host_displayname": "Henrietta",
+        "host_picture": "./images/leaf.jpg",
         "session_title": "Title No. 4",
         "description": "Description number 4",
         "max_occupancy": 3,
@@ -42,6 +46,7 @@
     {
         "host_id": 4,
         "host_displayname": "c00l1",
+        "host_picture": "./images/gary.jpg",
         "session_title": "Title No. 5",
         "description": "Description number 5",
         "max_occupancy": 3,

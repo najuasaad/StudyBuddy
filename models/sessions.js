@@ -26,7 +26,10 @@ Sessions.init(
       allowNull: false,
     },
     //can we pass the picture in here
-
+    host_picture: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     session_title: {
       type: DataTypes.STRING,
       allowNull: false,

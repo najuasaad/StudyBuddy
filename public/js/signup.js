@@ -17,11 +17,18 @@ async function newFormUser(event) {
   const title = document.querySelector('#inputTitle1').value.trim();
   const city = document.querySelector('#inputCity').value.trim();
   const state = document.querySelector('#inputState').value.trim();
-  const profilePicture = document.getElementsByName('profilePicture').value;
+  const profilePicture =  getProfilePicture()
 
-  // if ( isValidEmail(email) !== true ) {
-  //   prompt('Must use a valid email')
-  // }
+  function getProfilePicture() {
+    const rd1 = document.getElementById('catProfilePicture')
+    const rd2 = document.getElementById('garyProfilePicture')
+  // const rd3 = document.getElementId('ProfilePicture')
+  // const rd4 = document.getElementId('ProfilePicture')
+    if (rd1.checked === true){return rd1.value} 
+    else if (rd2.checked === true){return rd2.value}
+  // if (rd3.checked===true){rd3.value = profilepicture}
+  // if (rd4.checked===true){rd4.value = profilepicture}
+  }
   
   if (email && password && display_name && title) {
     console.log("if statement passed")

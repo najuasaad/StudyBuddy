@@ -8,7 +8,8 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const sessionMemberData = await SessionMember.create({
       session_id: req.body.session_id,
-      member_id: req.session.member_id
+      member_id: req.session.member_id,
+      member_picture: req.session.profilePicture
     });
     res.status(200).json(sessionMemberData);
   } catch (err) {

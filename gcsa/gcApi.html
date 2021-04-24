@@ -9,21 +9,22 @@
     <p>Google Calendar API Quickstart</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
- <button id="authorize_button" style="display: none;">Authorize</button>
- <button id="signout_button" style="display: none;">Sign Out</button>
+ <button id="authorize_button">Authorize</button>
+ <button id="signout_button">Sign Out</button>
 
  <pre id="content" style="white-space: pre-wrap;"></pre>
 
  <script type="text/javascript">
    // Client ID and API key from the Developer Console
-   var clientId = '<YOUR_CLIENT_ID>';
+   var clientId = '1048380372604-pp7ici0tece11k6nq2kjk87k9mq7lftv.apps.googleusercontent.com';
    var apiKey = '';
 
+  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
  // Authorization scopes required by the API; multiple scopes can be
  // included, separated by spaces.
-  //  var SCOPES = "https://www.googleapis.com/auth/calendar";
-  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+   var SCOPES = "https://www.googleapis.com/auth/calendar";
    var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
    var authorizeButton = document.getElementById('authorize_button');
@@ -43,8 +44,8 @@
        */
       function initClient() {
         gapi.client.init({
-          apiKey: API_KEY,
-          clientId: CLIENT_ID,
+          apiKey: apiKey,
+          clientId: clientId,
           discoveryDocs: DISCOVERY_DOCS,
           scope: SCOPES
         }).then(function () {

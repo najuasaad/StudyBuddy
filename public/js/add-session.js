@@ -15,7 +15,7 @@ async function newFormSession(event) {
     prompt('Log-in to add a session')
   }
   
-  if (title && description && max_occupancy && date && time && location ) {
+  if (session_title && description && max_occupancy && date && time && location ) {
     const response = await fetch(`/api/sessions`, {
       method: 'POST',
       body: JSON.stringify({
@@ -35,11 +35,11 @@ async function newFormSession(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/sessions');
+      document.location.replace('/');
     } else {
       alert('Failed to add session.');
     }
   }
 }
 
-document.getElementById('#newSession').addEventListener('submit', newFormSession);
+document.getElementById('#newSession').addEventListener('click', newFormSession);

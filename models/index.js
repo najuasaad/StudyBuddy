@@ -19,6 +19,17 @@ Sessions.belongsToMany(Members,{
     }
 });
 
+Sessions.belongsTo(Members,{
+        foreignKey: 'host_id',
+        as: 'host'
+});
+
+Members.hasMany(Sessions,{
+    foreignKey: 'host_id',
+    as: 'host',
+    onDelete: "cascade"
+});
+
 Notes.belongsTo(Members,{
     foreignKey: 'members_id', 
     onDelete: "cascade"

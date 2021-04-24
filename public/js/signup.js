@@ -30,6 +30,8 @@ async function newFormUser(event) {
   // // if (rd4.checked===true){rd4.value = profilepicture}
   // }
 
+  //for some reason, I can't get it to work with the full statement. the above is adding a new user and redirecting properly but below is not
+  
   function getProfilePicture() {
     const rd1 = document.getElementById('catProfilePicture')
     const rd2 = document.getElementById('dogProfilePicture')

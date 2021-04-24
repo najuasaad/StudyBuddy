@@ -7,7 +7,14 @@ const { Members, Sessions, Notes, SessionMember } = require('../models');
 router.get('/', async (req, res) => {
   try {
     const sessionData = await Sessions.findAll({
-      include: [ {  model: Members, through: SessionMember, as: "members" } ]
+      include: [{ 
+        model: Members, 
+        as: "host"
+      }, { 
+        model: Members, 
+        through: SessionMember, 
+        as: "members" 
+      }]
     });
 
     const sessions = sessionData.map((session) =>
@@ -32,13 +39,26 @@ router.get('/', async (req, res) => {
 // dash lists session user's notes and upcoming study sessions
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    const hostedSessionData = await Sessions.findAll({ 
+      where: { host_id : req.session.member_id },      
+      include: [{ 
+        model: Members, 
+        through: SessionMember, 
+        as: "members" 
+      }]
+    });
+
+    const hostedSessions = hostedSessionData.map((hostedSession) =>
+    hostedSession.get({ plain: true })
+    );
+
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
     const notesData = await Notes.findAll({ where: { member_id : req.session.member_id }});
 
     const notes = notesData.map((note) =>
     note.get({ plain: true })
-  );
+    );
 
     // STUDY SESSIONS 
     
@@ -49,9 +69,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const member = memberData.get({ plain: true })
 
-    console.log(member)
+    console.log(hostedSessions)
 
     res.render('dashboard', {
+      hostedSessions,
       member,
       notes,
       logged_in: req.session.logged_in,

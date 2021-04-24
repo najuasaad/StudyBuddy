@@ -19,15 +19,37 @@ async function newFormUser(event) {
   const state = document.querySelector('#inputState').value.trim();
   const profilePicture =  getProfilePicture()
 
+  // function getProfilePicture() {
+  //   const rd1 = document.getElementById('catProfilePicture')
+  //   const rd2 = document.getElementById('garyProfilePicture')
+  // // const rd3 = document.getElementId('ProfilePicture')
+  // // const rd4 = document.getElementId('ProfilePicture')
+  //   if (rd1.checked === true){return rd1.value} 
+  //   else if (rd2.checked === true){return rd2.value}
+  // // if (rd3.checked===true){rd3.value = profilepicture}
+  // // if (rd4.checked===true){rd4.value = profilepicture}
+  // }
+
+  //for some reason, I can't get it to work with the full statement. the above is adding a new user and redirecting properly but below is not
+  
   function getProfilePicture() {
     const rd1 = document.getElementById('catProfilePicture')
-    const rd2 = document.getElementById('garyProfilePicture')
-  // const rd3 = document.getElementId('ProfilePicture')
-  // const rd4 = document.getElementId('ProfilePicture')
+    const rd2 = document.getElementById('dogProfilePicture')
+    const rd3 = document.getElementById('dragonfruitProfilePicture')
+    const rd4 = document.getElementById('jellyfishProfilePicture')
+    const rd5 = document.getElementById('leafProfilePicture')
+    const rd6 = document.getElementById('fruitsaladProfilePicture')
+    const rd7 = document.getElementById('pinkflowerProfilePicture')
+    const rd8 = document.getElementById('garyProfilePicture')
+
     if (rd1.checked === true){return rd1.value} 
     else if (rd2.checked === true){return rd2.value}
-  // if (rd3.checked===true){rd3.value = profilepicture}
-  // if (rd4.checked===true){rd4.value = profilepicture}
+    else if (rd3.checked === true){return rd3.value}
+    else if (rd4.checked === true){return rd4.value}
+    else if (rd5.checked === true){return rd5.value}
+    else if (rd6.checked === true){return rd6.value}
+    else if (rd7.checked === true){return rd7.value}
+    else {return rd8.value}
   }
   
   if (email && password && display_name && title) {

@@ -9,6 +9,22 @@
             buttons for update/delete on each note, grab by note id           
         --}}
 
+<p class="text-center font white">my hosted study sessions</p>
+<div class="container upcomingsessions my-5" id='upcomingsessions'>
+    <div class="row justify-content-center">       
+        {{#each hostedSessions as |session|}}
+        <div class="card col-md-3 m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{session.session_title}}</h5>
+                <p class="card-text">{{session.description}}</p>
+                <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} {{session.time}}</h6><br>
+                <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6><br>
+                <button data-id="{{session.id}}" class="card-link pink btn-link bg-white border-0 float-right unenroll">delete</button>
+            </div>
+        </div>        
+        {{/each}}
+    </div>
+</div>
 
 <p class="text-center font white">my upcoming study sessions</p>
 <div class="container upcomingsessions my-5" id='upcomingsessions'>
@@ -17,9 +33,9 @@
         <div class="card col-md-3 m-1" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{session.session_title}}</h5>
-                <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
-                <p class="card-text">{{session.description}}"</p>
+                <p class="card-text">{{session.description}}</p>
+                <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} {{session.time}}</h6><br>
+                <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6><br>
                 {{!-- updated to unenroll the session --}}
                 <button data-id="{{session.session_member.id}}"  class="card-link pink btn-link bg-white border-0 float-right unenroll">un-enroll</button>
             </div>

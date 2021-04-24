@@ -53,3 +53,8 @@ img {
     max-height: 200px;
     max-width: auto;
 }
+
+.attendee {
+    max-height: 50px;
+    max-width: auto;
+}

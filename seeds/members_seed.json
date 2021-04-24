@@ -6,7 +6,7 @@
         "title": "Student",
         "city": "Atlanta",
         "state": "GA",
-        "image_path": "./images/cat"
+        "profilePicture": "./images/cat.jpg"
     },
     {
         "email": "najuadontdie@gmail.com",
@@ -14,23 +14,26 @@
         "display_name": "Henrietta",
         "title": "Student",
         "city": "St. Paul",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": "./images/leaf.jpg"
     },
     {
         "email": "samanthanajua@hotmail.com",
         "password": "nottodaysatan",
-        "display_name": "alan123",
+        "display_name": "Hulkmania1988",
         "title": "Tutor",
         "city": "New Hope",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": "./images/fruitsalad.jpg"
     },
     {
         "email": "girlsaliar@weezer.org",
         "password": "why4what",
-        "display_name": "C00l1",
+        "display_name": "Garajuana",
         "title": "Student",
         "city": "Savage",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": "./images/gary.jpg"
     },
     {
         "email": "najua@gmail.com",
@@ -38,6 +41,7 @@
         "display_name": "Maya",
         "title": "Junior Developer",
         "city": "Brainerd",
-        "state": "MN"
+        "state": "MN",
+        "profilePicture": "./images/jellyfish.jpg"
     }
 ]

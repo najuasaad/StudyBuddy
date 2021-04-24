@@ -47,6 +47,7 @@ router.post('/login', async (req, res) => {
       req.session.member = userData.display_name;
       req.session.logged_in = true;
       req.session.email = userData.email;
+      req.session.profilePicture = userData.profilePicture
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });

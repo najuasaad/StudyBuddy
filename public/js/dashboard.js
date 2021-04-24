@@ -1,12 +1,10 @@
 async function unenrollSession(event) {
-
   if (event.target.hasAttribute('data-id')) {
     event.preventDefault();
-
-    const session_id = event.target.getAttribute('data-id');
-          
-    if (session_id) {
-      const response = await fetch(`/api/sessionmember/${session_id}`, {
+    // updated to unenroll the session
+    const session_member_id = event.target.getAttribute('data-id');
+    if (session_member_id) {
+      const response = await fetch(`/api/sessionmembers/${session_member_id}`, {
       method: 'DELETE',
       }) 
       
@@ -39,6 +37,6 @@ async function deleteNote(event) {
     }
   }
 }
-
-document.querySelector('.upcomingsessions').addEventListener('click', unenrollSession);
+// updated to unenroll the session
+document.querySelector('#upcomingsessions').addEventListener('click', unenrollSession);
 document.querySelector('.notes').addEventListener('click', deleteNote);

@@ -28,15 +28,19 @@
             <label for="inputState">state</label>
             <input type="text" placeholder="ex. TX" class="form-control" id="inputState">
           </div>
-          {{!-- <div class="input-group">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputProfilePicture" aria-describedby="inputGroupFileAddon04">
-              <label class="custom-file-label" for="inputProfilePicture">add a profile photo</label>
-            </div>           
-          </div> --}}
 
-          {{!-- <div id="emoji">{{{get_emoji}}}</div> --}}
-
+          <p>choose a profile picture</p>
+         
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profilePicture" id="catProfilePicture" value="./images/cat.jpg">
+            <label class="form-check-label" for="catProfilePicture"><img src="./images/cat.jpg" class="img-thumbnail" alt="cat">  </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profilePicture" id="garyProfilePicture" value="./images/gary.jpg">
+            <label class="form-check-label" for="garyProfilePicture"><img src="./images/gary.jpg" class="img-thumbnail" alt="cat">  </label>
+          </div><br><br>
+        
+        
           <button class="btn btn-dark" id="newUser">Submit</button>
           <br><br><a class="text-right" href="/login">I have an account</a>
         </form>

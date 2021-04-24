@@ -5,7 +5,8 @@
         "display_name": "Spock",
         "title": "Student",
         "city": "Atlanta",
-        "state": "GA"
+        "state": "GA",
+        "image_path": "./images/cat"
     },
     {
         "email": "najuadontdie@gmail.com",

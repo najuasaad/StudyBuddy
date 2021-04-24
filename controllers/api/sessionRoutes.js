@@ -67,11 +67,6 @@ router.delete('/:id', async (req, res) => {
       }
     });
 
-    if (!sessionData) {
-      res.status(404).json({ message: 'No session found with this id!' });
-      return;
-    }
-
     res.status(200).json(sessionData);
   } catch (err) {
     res.status(500).json(err);

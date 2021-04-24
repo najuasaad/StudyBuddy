@@ -6,7 +6,7 @@
         "title": "Student",
         "city": "Atlanta",
         "state": "GA",
-        "image_path": "./images/cat"
+        "profilePicture": "./images/cat"
     },
     {
         "email": "najuadontdie@gmail.com",
@@ -15,7 +15,7 @@
         "title": "Student",
         "city": "St. Paul",
         "state": "MN",
-        "image_path": "./images/leaf"
+        "profilePicture": "./images/leaf"
     },
     {
         "email": "samanthanajua@hotmail.com",
@@ -24,7 +24,7 @@
         "title": "Tutor",
         "city": "New Hope",
         "state": "MN",
-        "image_path": "./images/fruitsalad"
+        "profilePicture": "./images/fruitsalad"
     },
     {
         "email": "girlsaliar@weezer.org",
@@ -33,7 +33,7 @@
         "title": "Student",
         "city": "Savage",
         "state": "MN",
-        "image_path": "./images/gary"
+        "profilePicture": "./images/gary"
     },
     {
         "email": "najua@gmail.com",
@@ -42,6 +42,6 @@
         "title": "Junior Developer",
         "city": "Brainerd",
         "state": "MN",
-        "image_path": "./images/jellyfish"
+        "profilePicture": "./images/jellyfish"
     }
 ]

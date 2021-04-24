@@ -44,8 +44,13 @@ router.get('/:id', async (req, res) => {
 
 // CREATE a session
 router.post('/', async (req, res) => {
+  console.log(req.body)
   try {
-    const newSessionData = await Sessions.create(req.body);
+    const newSessionData = await Sessions.create({
+      ...req.body, 
+      host_id: req.session.member_id, 
+      host_displayname: req.session.member
+    });
     res.status(200).json(newSessionData);
   } catch (err) {
     res.status(400).json(err);

@@ -14,7 +14,8 @@
         "display_name": "Henrietta",
         "title": "Student",
         "city": "St. Paul",
-        "state": "MN"
+        "state": "MN",
+        "image_path": "./images/leaf"
     },
     {
         "email": "samanthanajua@hotmail.com",
@@ -22,7 +23,8 @@
         "display_name": "alan123",
         "title": "Tutor",
         "city": "New Hope",
-        "state": "MN"
+        "state": "MN",
+        "image_path": "./images/fruitsalad"
     },
     {
         "email": "girlsaliar@weezer.org",
@@ -30,7 +32,8 @@
         "display_name": "C00l1",
         "title": "Student",
         "city": "Savage",
-        "state": "MN"
+        "state": "MN",
+        "image_path": "./images/gary"
     },
     {
         "email": "najua@gmail.com",
@@ -38,6 +41,7 @@
         "display_name": "Maya",
         "title": "Junior Developer",
         "city": "Brainerd",
-        "state": "MN"
+        "state": "MN",
+        "image_path": "./images/jellyfish"
     }
 ]

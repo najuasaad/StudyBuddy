@@ -31,12 +31,12 @@ Members.hasMany(Sessions,{
 });
 
 Notes.belongsTo(Members,{
-    foreignKey: 'members_id', 
+    foreignKey: 'member_id', 
     onDelete: "cascade"
 });
 
 Members.hasMany(Notes,{
-    foreignKey: 'members_id', 
+    foreignKey: 'member_id', 
     onDelete: "cascade"
 });
 

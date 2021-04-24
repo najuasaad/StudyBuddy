@@ -7,7 +7,14 @@ const { Members, Sessions, Notes, SessionMember } = require('../models');
 router.get('/', async (req, res) => {
   try {
     const sessionData = await Sessions.findAll({
-      include: [ {  model: Members, through: SessionMember, as: "members" } ]
+      include: [{ 
+        model: Members, 
+        as: "host"
+      }, { 
+        model: Members, 
+        through: SessionMember, 
+        as: "members" 
+      }]
     });
 
     const sessions = sessionData.map((session) =>

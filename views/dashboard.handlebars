@@ -11,7 +11,7 @@
 
 
 <p class="text-center font white">my upcoming study sessions</p>
-<div class="container upcomingsessions my-5">
+<div class="container upcomingsessions my-5" id='upcomingsessions'>
     <div class="row justify-content-center">       
         {{#each member.sessions as |session|}}
         <div class="card col-md-3 m-1" style="width: 18rem;">
@@ -20,7 +20,8 @@
                 <h6 class="card-subtitle mb-2 pink">{{session.date}} {{session.time}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
                 <p class="card-text">{{session.description}}"</p>
-                <button data-id="{{session.id}}" class="card-link pink btn-link bg-white border-0 float-right unenroll">un-enroll</button>
+                {{!-- updated to unenroll the session --}}
+                <button data-id="{{session.session_member.id}}"  class="card-link pink btn-link bg-white border-0 float-right unenroll">un-enroll</button>
             </div>
         </div>        
         {{/each}}

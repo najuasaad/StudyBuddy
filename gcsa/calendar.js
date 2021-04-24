@@ -13,7 +13,7 @@
    var clientId = '1048380372604-pp7ici0tece11k6nq2kjk87k9mq7lftv.apps.googleusercontent.com';
    var apiKey = ''
 
-   
+   var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
 
  // Authorization scopes required by the API; multiple scopes can be
@@ -21,8 +21,8 @@
    var SCOPES = "https://www.googleapis.com/auth/calendar";
    var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-   var authorizeButton = document.getElementById('authorize_button');
-   var signoutButton = document.getElementById('signout_button');
+  //  var authorizeButton = document.getElementById('authorize_button');
+  //  var signoutButton = document.getElementById('signout_button');
 
    
       /**

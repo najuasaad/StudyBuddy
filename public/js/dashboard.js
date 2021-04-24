@@ -40,13 +40,13 @@ async function unenrollSession(event) {
 }
 
 async function deleteNote(event) {
-
+  console.log("button pushed")
   if (event.target.hasAttribute('data-id')) {
     event.preventDefault();
 
     const note_id = event.target.getAttribute('data-id');
           
-    if (session_id) {
+    if (note_id) {
       const response = await fetch(`/api/notes/${note_id}`, {
         method: 'DELETE',
       }) 

@@ -1,21 +1,18 @@
 async function newFormSession(event) {
   event.preventDefault();
 
+  console.log("button pushed")
   const session_title = document.querySelector('#inputSessionTitle').value.trim();
   const description = document.querySelector('#inputSessionDescription').value.trim();
   const max_occupancy = document.querySelector('#inputSessionOccupancy').value.trim();
   const date = document.querySelector('#inputSessionDate').value.trim();
   const time = document.querySelector('#inputSessionTime').value.trim();
   const location = document.querySelector('#inputSessionLocation').value.trim();
-  const host_id = req.session.logged_in_user; 
-  const host_displayname = req.session.logged_in_member;
-  const host_picture = req.session.profilePicture
-
-  if ( !req.session.logged_in ) {
-    prompt('Log-in to add a session')
-  }
+  // const host_id = req.session.logged_in_user; 
+  // const host_displayname = req.session.logged_in_member;
   
   if (session_title && description && max_occupancy && date && time && location ) {
+    console.log("if statement passed")
     const response = await fetch(`/api/sessions`, {
       method: 'POST',
       body: JSON.stringify({
@@ -25,9 +22,8 @@ async function newFormSession(event) {
         date,
         time,
         location,
-        host_id,
-        host_displayname,
-        host_picture
+        // host_id,
+        // host_displayname,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -42,4 +38,4 @@ async function newFormSession(event) {
   }
 }
 
-document.getElementById('#newSession').addEventListener('click', newFormSession);
+document.getElementById('newSession').addEventListener('click', newFormSession);

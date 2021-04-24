@@ -33,12 +33,12 @@ async function newFormUser(event) {
   function getProfilePicture() {
     const rd1 = document.getElementById('catProfilePicture')
     const rd2 = document.getElementById('dogProfilePicture')
-    const rd3 = document.getElementId('dragonfruitProfilePicture')
-    const rd4 = document.getElementId('jellyfishProfilePicture')
-    const rd5 = document.getElementId('leafProfilePicture')
-    const rd6 = document.getElementId('fruitsaladProfilePicture')
-    const rd7 = document.getElementId('pinkflowerProfilePicture')
-    const rd8 = document.getElementId('garyProfilePicture')
+    const rd3 = document.getElementById('dragonfruitProfilePicture')
+    const rd4 = document.getElementById('jellyfishProfilePicture')
+    const rd5 = document.getElementById('leafProfilePicture')
+    const rd6 = document.getElementById('fruitsaladProfilePicture')
+    const rd7 = document.getElementById('pinkflowerProfilePicture')
+    const rd8 = document.getElementById('garyProfilePicture')
 
     if (rd1.checked === true){return rd1.value} 
     else if (rd2.checked === true){return rd2.value}

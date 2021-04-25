@@ -51,7 +51,7 @@ a:hover {
     bottom: -7px;
 }
 
-img {
+.hostimage {
     max-height: 200px; /*Please make this a class and call on images that need it (line 23 of session.handlebars). Putting the global img rule is interfering with rendering google map*/
     max-width: auto;
 }

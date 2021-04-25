@@ -64,3 +64,42 @@ a:hover {
 .hide {
    display: none;
 }
+
+.enroll { /* on enroll button */
+    font-size:25px;
+    color: var(--pink);
+    background-color: white;
+    font-weight: bold;
+}
+
+.enrollBtn { /* on div1 */
+    margin: 0;
+    position: absolute;
+    left: 35%;
+    bottom: 0%; /* not sure if we want this or not */
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nejContainer { /*  on div2 */
+    position: relative;
+}
+
+.currentlyenrolled {
+    font-size:larger;
+    color: var(--litepink)
+}
+
+.cardDisplayTag { /* on div1 */
+    margin: 0;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+
+
+

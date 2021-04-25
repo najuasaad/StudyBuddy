@@ -1,4 +1,4 @@
-# StudyBuddy
+# Study Buddy
 
 ## Description
 Study Buddy is an app that allows a signed-in user to view their notes and upcoming study sessions from their dashboard. In the upcoming sessions page, they can view study sessions being hosted or add their own study session for people to sign up to attend.

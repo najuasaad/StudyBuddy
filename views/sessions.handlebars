@@ -16,15 +16,16 @@
                 <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} <br> {{session.time}}</h6><br>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
                 <p class="mt-4"><img src="{{session.host_picture}}" class="rounded-circle hostimage" alt="profile picture" title="{{session.host_displayname}}"></p>
-
                 <p class="card-text font-italic text-center">Host: {{host_displayname}}</p>
-                <div class="card-subtitle mb-2 mint text-center font-italic">
-                    <h6>Attendees:</h6>
+                <h6 class="text-muted text-center font-italic">Openings Left: {{session.seatsLeft}}</h6>
+                <div class="card-subtitle mb-2 text-center">
+                    <h6 class="mint font-italic">Attendees:</h6>
                     {{#each session.members as |member|}}
                     <img src="{{member.profilePicture}}" class="rounded-circle attendee" alt="{{member.display_name}}" title="{{member.display_name}}">
                     {{!-- <h6>{{member.display_name}}</h6> --}}
                     {{/each}}
-                    <h6>Openings Left: {{session.seatsLeft}}</h6>
+                    <br><br>
+                    
                 </div>
                 {{!-- {{#if logged_in }} --}}
                     {{#if isHost }}
@@ -32,9 +33,9 @@
                     {{else}}
                         {{#if seatsAvailable }}
                             {{#if isEnrolled }}
-                            <h6 class="border-0 pink bg-white float-right enroll">Currently Enrolled</h6>
+                            <h6 class="currentlyenrolled text-center align-bottom">currently enrolled</h6>
                             {{else}}
-                            <button data-id="{{session.id}}" class="card-link border-0 pink bg-white float-right enroll">enroll</button>
+                            <div class="enrollBtn"><button data-id="{{session.id}}" class="btn card-link border-0 enroll">enroll</button></div><br>
                             {{/if}}
                         {{/if}}
                     {{/if}}

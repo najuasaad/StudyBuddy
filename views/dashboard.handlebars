@@ -20,6 +20,9 @@
                 <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} {{session.time}}</h6><br>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6><br>
                 <button data-id="{{session.id}}" class="card-link pink btn-link bg-white border-0 float-right unenroll">delete</button>
+                <div class="card-subtitle mb-2 mint text-center font-italic">
+                    <h6>Openings Left: {{session.seatsLeft}}</h6>    
+                </div>
             </div>
         </div>        
         {{/each}}
@@ -36,6 +39,9 @@
                 <p class="card-text">{{session.description}}</p>
                 <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} {{session.time}}</h6><br>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6><br>
+                <div class="card-subtitle mb-2 mint text-center font-italic">
+                    <h6>Openings Left: {{session.seatsLeft}}</h6>    
+                </div>
                 {{!-- updated to unenroll the session --}}
                 <button data-id="{{session.session_member.id}}"  class="card-link pink btn-link bg-white border-0 float-right unenroll">un-enroll</button>
             </div>

@@ -21,7 +21,31 @@ router.get('/', async (req, res) => {
       session.get({ plain: true })
     );
 
-    console.log(sessions)
+
+    sessions.map(session => {
+      if (session.host_id === req.session.member_id ) {
+        session.isHost = true
+      }
+      else {
+        session.isHost = false
+      }
+    })
+
+    sessions.map(session => {
+      for (i=0; i < session.members.length; i++ ) {
+        if (session.members[i].id === req.session.member_id ) {
+          return session.isEnrolled = true
+        }
+      }
+      session.isEnrolled = false
+    })
+
+    console.log({
+      sessions,
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
+    })
 
     res.render('sessions', {
       sessions,

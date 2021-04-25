@@ -150,14 +150,23 @@ router.get('/addnote', withAuth, async (req, res) => {
   }
 });
 
-// Map route under construction .handlebars will be created soon by KL.
 router.get('/map', async (req, res) => {
   try {
+
+    const locationData = await Members.findAll({
+      attributes: ['city', 'state']
+    });
+
+    const locations = locationData.map((location) =>
+      location.get({ plain: true })
+    );
+  
+    console.log(locations)
+
     res.render('map', {
-      logged_in: req.session.logged_in,
-      logged_in_member: req.session.member,
-      logged_in_id: req.session.member_id
-    }); 
+      locations
+    });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

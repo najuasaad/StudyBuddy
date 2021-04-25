@@ -21,6 +21,9 @@ router.get('/', async (req, res) => {
       session.get({ plain: true })
     );
 
+    sessions.map(session => {
+      session.logged_in = req.session.logged_in
+    })
 
     sessions.map(session => {
       if (session.host_id === req.session.member_id ) {

@@ -203,10 +203,20 @@ router.get('/map', async (req, res) => {
       location.get({ plain: true })
     );
   
-    console.log(locations)
+    const sessionData = await Sessions.findAll({
+     
+    });
+
+    const sessions = sessionData.map((session) =>
+    session.get({ plain: true })
+    );
+  
+    console.log(locations);
+    console.log(sessions);
 
     res.render('map', {
       locations,
+      sessions,
       logged_in: req.session.logged_in,
       logged_in_member: req.session.member,
       logged_in_id: req.session.member_id

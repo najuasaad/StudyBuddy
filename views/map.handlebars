@@ -1,16 +1,20 @@
 <div id="floating-panel" style="color:white">
 
- {{#each locations as |location|}}
+    {{#each locations as |location|}}
     <span class="hide"> {{location.city}}, {{location.state}} </span>
-
     {{/each}}
+
+    {{#each sessions as |session|}}
+    <p class="hide"> {{session.location}} </p>
+    {{/each}}
+
+
     <input id="submit" class="btn btn-dark" type="button" value="Find Study Buddies" />
-    <input id="submit" class="btn btn-dark" type="button" value="Find Sessions" />
+    <input id="submitSession" class="btn btn-dark" type="button" value="Find Sessions" />
 </div>
-<div id="map" style=" height: 250px;
+<div id="map" style=" height: 450px;
                         margin: 0;
                         padding: 0; ">
-   
+
 </div>
 <!--Map element was inheriting styles that set its height/width to 0. Used inline styles to override-->
-

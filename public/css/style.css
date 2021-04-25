@@ -87,7 +87,7 @@ a:hover {
 
 .currentlyenrolled {
     font-size:larger;
-    color: var(--litepink)
+    color: var(--pink)
 }
 
 .cardDisplayTag { /* on div1 */

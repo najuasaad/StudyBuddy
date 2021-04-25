@@ -25,8 +25,7 @@ router.get('/', async (req, res) => {
     sessions.map(session => {
       if (session.host_id === req.session.member_id ) {
         session.isHost = true
-      }
-      else {
+      } else {
         session.isHost = false
       }
     })
@@ -39,6 +38,17 @@ router.get('/', async (req, res) => {
       }
       session.isEnrolled = false
     })
+
+    sessions.map(session => {
+      if (session.max_occupancy > session.members.length) {
+        session.seatsLeft = (session.max_occupancy - session.members.length)
+        session.seatsAvailable = true
+      } else {
+        session.seatsLeft = 0
+        session.seatsAvailable = false
+      }
+    })
+
 
     console.log({
       sessions,
@@ -76,6 +86,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
     hostedSession.get({ plain: true })
     );
 
+    hostedSessions.map(session => {
+      if (session.max_occupancy > session.members.length) {
+        session.seatsLeft = (session.max_occupancy - session.members.length)
+        session.seatsAvailable = true
+      } else {
+        session.seatsLeft = 0
+        session.seatsAvailable = false
+      }
+    })
+
     // NOTES instead of findOne, findMany where member_id = req.session.member_id
 
     const notesData = await Notes.findAll({ where: { member_id : req.session.member_id }});
@@ -88,12 +108,31 @@ router.get('/dashboard', withAuth, async (req, res) => {
     
     const memberData = await Members.findOne({ 
       where: { id: req.session.member_id }, 
-      include: [ {model: Sessions, through: SessionMember, as: "sessions"}]
+      include: [ {
+        model: Sessions,
+        through: SessionMember,
+        as: "sessions",
+        include: [ {
+          model: Members,
+        }]
+      }]
     })
 
     const member = memberData.get({ plain: true })
 
-    console.log(hostedSessions)
+    console.log(member.sessions)
+
+    member.sessions.map(session => {
+      if (session.max_occupancy > session.members.length) {
+        session.seatsLeft = (session.max_occupancy - session.members.length)
+        session.seatsAvailable = true
+      } else {
+        session.seatsLeft = 0
+        session.seatsAvailable = false
+      }
+    })
+
+    console.log(member)
 
     res.render('dashboard', {
       hostedSessions,

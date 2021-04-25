@@ -23,6 +23,8 @@ AS A student I WANT TO manage my upcoming study sessions and notes SO THAT I can
 ## Links
 [Github Repo](https://github.com/najuasaad/StudyBuddy)
 
+[Heroku App](https://mysterious-bayou-93387.herokuapp.com/)
+
 ## Screenshots
 
 ![Screenshot1](./images/dashboard1.jpg)

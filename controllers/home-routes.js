@@ -203,7 +203,10 @@ router.get('/map', async (req, res) => {
     console.log(locations)
 
     res.render('map', {
-      locations
+      locations,
+      logged_in: req.session.logged_in,
+      logged_in_member: req.session.member,
+      logged_in_id: req.session.member_id
     });
 
   } catch (err) {

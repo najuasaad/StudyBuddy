@@ -6,25 +6,24 @@ async function enrollSession(event) {
         event.preventDefault();
         console.log("button and user passed")
 
-        const session_id = event.target.getAttribute('data-id');
-            
-        if (session_id) {
-            const response = await fetch(`/api/sessionmembers/`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    session_id,
-                }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }) 
+        const session_id = event.target.getAttribute('data-id');   
         
-            if (response.ok) {
-                document.location.replace('/');
-            } else {
-                alert('Failed to enroll.');
-            }
+        const response = await fetch(`/api/sessionmembers/`, {
+            method: 'POST',
+            body: JSON.stringify({
+                session_id,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }) 
+    
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to enroll.');
         }
+        
     }
 }
 

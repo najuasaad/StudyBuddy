@@ -15,16 +15,26 @@
                 <p class="card-text">{{session.description}}</p>
                 <h6 class="card-subtitle mb-2 pink">{{format_date session.date}} <br> {{session.time}}</h6><br>
                 <h6 class="card-subtitle mb-2 text-muted">{{session.location}}</h6>
-                <p class="mt-4"><img src="{{session.host_picture}}" class="rounded-circle" alt="profile picture"></p>
+                <p class="mt-4"><img src="{{session.host_picture}}" class="rounded-circle" alt="profile picture" title="{{session.host_displayname}}"></p>
                 <p class="card-text font-italic text-center">Host: {{host_displayname}}</p>
                 <div class="card-subtitle mb-2 mint text-center font-italic">
                     <h6>Attendees:</h6>
                     {{#each session.members as |member|}}
-                    <img src="{{member.profilePicture}}" class="rounded-circle attendee" alt="{{member.display_name}}">
+                    <img src="{{member.profilePicture}}" class="rounded-circle attendee" alt="{{member.display_name}}" title="{{member.display_name}}">
                     {{!-- <h6>{{member.display_name}}</h6> --}}
                     {{/each}}
                 </div>
-                <button data-id="{{session.id}}" class="card-link border-0 pink bg-white float-right enroll">enroll</button>
+                {{!-- {{#if logged_in }} --}}
+                    {{#if isHost }}
+                    {{!-- display nothing --}}
+                    {{else}}
+                        {{#if isEnrolled }}
+                        <h6 class="border-0 pink bg-white float-right enroll">Currently Enrolled</h6>
+                        {{else}}
+                        <button data-id="{{session.id}}" class="card-link border-0 pink bg-white float-right enroll">enroll</button>
+                        {{/if}}
+                    {{/if}}
+                {{!-- {{/if}}    --}}
             </div>
         </div>
         {{/each}}
